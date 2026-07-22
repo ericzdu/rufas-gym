@@ -1,0 +1,37 @@
+{
+  "years": 7,
+  "regions": {
+    "Midwest": {
+      "region": "Midwest",
+      "failed": false,
+      "milk_kg": 12355260.348441193,
+      "feed_cost": 1974631.6155496626,
+      "revenue": 5559867.156798537,
+      "profit": 3585235.5412488743
+    },
+    "Northeast": {
+      "region": "Northeast",
+      "failed": true,
+      "milk_kg": 0,
+      "feed_cost": 0,
+      "revenue": 0.0,
+      "profit": 0.0
+    },
+    "Southwest": {
+      "region": "Southwest",
+      "failed": true,
+      "milk_kg": 0,
+      "feed_cost": 0,
+      "revenue": 0.0,
+      "profit": 0.0
+    },
+    "Intermountain": {
+      "region": "Intermountain",
+      "failed": true,
+      "milk_kg": 0,
+      "feed_cost": 0,
+      "revenue": 0.0,
+      "profit": 0.0
+    }
+  }
+}

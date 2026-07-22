@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rufas-rl"
+version = "0.1.0"
+description = "A dynamics-preserving Gymnasium environment wrapping the RuFaS whole-farm dairy simulator"
+readme = "README.md"
+requires-python = ">=3.12, <3.14"
+
+# RuFaS is imported from ../RuFaS via a sys.path shim (see rufas_rl/bootstrap.py) rather
+# than installed, so its runtime dependencies are mirrored here — our env must be a
+# superset of RuFaS's. Keep in sync with ../RuFaS/pyproject.toml.
+dependencies = [
+    "gymnasium>=1.0.0",
+    "matplotlib>=3.10.0",
+    "numpy==2.2.0",
+    "pandas>=2.2.3",
+    "scipy>=1.15.1",
+    "typing_extensions>=4.12.2",
+    "salib==1.5.1",
+    "tqdm>=4.67.1",
+    "deepdiff>=8.2.0",
+    "psutil>=6.1.1",
+    "numba>=0.61.0",
+]
+
+[project.optional-dependencies]
+# Training stack — not needed to run the env itself.
+train = [
+    "stable-baselines3>=2.4.0",
+    "tensorboard>=2.18.0",
+    "cma>=4.0.0",
+    "optuna>=4.0.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "flake8>=7.1.1",
+]
+
+[tool.setuptools]
+packages = ["rufas_rl"]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: runs a real multi-year RuFaS simulation (tens of seconds or more)",
+]
