@@ -31,6 +31,7 @@ from .composite import CompositeImplementer
 from .config import EnvConfig
 from .harness import EpisodeProcess
 from .observers import OBS_CLIP, FarmObserver
+from .prices import build_price_features
 from .spec import ScenarioSpec, load_spec
 
 
@@ -57,7 +58,10 @@ class RufasEnv(gym.Env):
         self.render_mode = render_mode
 
         self._implementer = CompositeImplementer(self.scenario_spec, self.config.levers)
-        self._observer = FarmObserver(n_fields=self.scenario_spec.n_fields)
+        self._observer = FarmObserver(
+            n_fields=self.scenario_spec.n_fields,
+            price_features=build_price_features(self.scenario_spec, self.config),
+        )
 
         self.action_space = self._implementer.action_space()
         self.observation_space = spaces.Box(

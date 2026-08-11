@@ -70,6 +70,15 @@ class MilkMinusNitrogen:
         self._prev_milk_rate: float = 0.0
         self._prev_runoff_n: dict[int, float] = {}
 
+    def set_milk_price(self, price: float) -> None:
+        """Move the milk price mid-episode, for a time-varying price path.
+
+        The episode sets this before resuming, so the interval about to be simulated is
+        valued at the price in force during it. Deliberately not `reset()`-ing anything:
+        the price is a parameter of the *next* interval, not episode state.
+        """
+        self.milk_price = float(price)
+
     def _runoff_n(self, engine) -> dict[int, float]:
         out: dict[int, float] = {}
         field_manager = getattr(engine, "field_manager", None)
@@ -164,6 +173,16 @@ class Profit:
     def reset(self) -> None:
         self._milk.reset()
         self._prev_feed_cost: float | None = None
+
+    def set_milk_price(self, price: float) -> None:
+        """Move the milk price mid-episode; delegates to the wrapped milk rewarder.
+
+        Only the *revenue* side needs telling. Feed cost comes from RuFaS's own output
+        pool, which is already denominated at whatever prices `PriceApplier` wrote onto
+        the live `Feed` objects — so it tracks the price path with no help from here.
+        """
+        self.milk_price = float(price)
+        self._milk.set_milk_price(price)
 
     def _feed_cost_to_date(self) -> float:
         """Total feed spend RuFaS has reported so far this run."""

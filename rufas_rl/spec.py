@@ -39,7 +39,19 @@ class ScenarioSpec:
     ration_sizes: tuple[int, ...]
     #: `animal_combination` of each ration, same order
     ration_groups: tuple[str, ...]
+    #: RuFaS feed IDs in each ration, in the same order as that ration's action segment.
+    #: Lets per-feed logic (inclusion caps, price-ranking policies) line up with the
+    #: action vector without re-reading the feed file.
+    ration_feed_ids: tuple[tuple[int, ...], ...] = field(default_factory=tuple)
     field_names: tuple[str, ...] = field(default_factory=tuple)
+    #: RuFaS feed IDs available to the scenario, ascending — the keys a price path is
+    #: written against. From the feed file's `feeds[].feed_type`.
+    feed_ids: tuple[int, ...] = field(default_factory=tuple)
+    #: Configured `purchased_feed_cost` as `(feed_id, $/kg dry matter)` pairs, ascending.
+    #: These are the long-run means a synthetic price path varies around, and the
+    #: constants a static path reproduces. Pairs rather than a dict so the frozen
+    #: dataclass stays hashable; `dict(spec.feed_prices)` is the usual read.
+    feed_prices: tuple[tuple[int, float], ...] = field(default_factory=tuple)
 
     @property
     def n_action_slots(self) -> int:
@@ -84,6 +96,15 @@ def load_spec(
     rations = feed.get("rations", [])
     ration_sizes = tuple(len(r["feeds"]) for r in rations)
     ration_groups = tuple(r.get("animal_combination", f"group_{i}") for i, r in enumerate(rations))
+    ration_feed_ids = tuple(
+        tuple(int(f["feed_type"]) for f in r["feeds"]) for r in rations
+    )
+
+    # The purchasable feed list is separate from the rations that draw on it.
+    prices = {int(f["feed_type"]): float(f["purchased_feed_cost"])
+              for f in feed.get("feeds", [])}
+    feed_ids = tuple(sorted(prices))
+    feed_prices = tuple((i, prices[i]) for i in feed_ids)
 
     # Fields are declared as `field_1`, `field_2`, ... keys in the scenario metadata.
     field_names = tuple(sorted(k for k in files if k.startswith("field_")))
@@ -96,5 +117,8 @@ def load_spec(
         end_year=_parse_year(config["end_date"]),
         ration_sizes=ration_sizes,
         ration_groups=ration_groups,
+        ration_feed_ids=ration_feed_ids,
         field_names=field_names,
+        feed_ids=feed_ids,
+        feed_prices=feed_prices,
     )

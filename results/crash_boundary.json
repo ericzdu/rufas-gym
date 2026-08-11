@@ -1,0 +1,78 @@
+{
+  "years": 1,
+  "logit_scale": 8.0,
+  "results": [
+    {
+      "feed": 301,
+      "target_share": 0.5,
+      "achieved_pct": 49.999999053352425,
+      "failed_at": null
+    },
+    {
+      "feed": 301,
+      "target_share": 0.7,
+      "achieved_pct": 70.00000143277009,
+      "failed_at": null
+    },
+    {
+      "feed": 301,
+      "target_share": 0.9,
+      "achieved_pct": 89.99999947977865,
+      "failed_at": null
+    },
+    {
+      "feed": 301,
+      "target_share": 0.97,
+      "achieved_pct": 96.99999979325375,
+      "failed_at": 0
+    },
+    {
+      "feed": 23,
+      "target_share": 0.5,
+      "achieved_pct": 49.99999905335241,
+      "failed_at": null
+    },
+    {
+      "feed": 23,
+      "target_share": 0.7,
+      "achieved_pct": 70.00000143277008,
+      "failed_at": null
+    },
+    {
+      "feed": 23,
+      "target_share": 0.9,
+      "achieved_pct": 89.99999947977867,
+      "failed_at": null
+    },
+    {
+      "feed": 23,
+      "target_share": 0.97,
+      "achieved_pct": 96.99999979325369,
+      "failed_at": null
+    },
+    {
+      "feed": 50,
+      "target_share": 0.5,
+      "achieved_pct": 49.999999053352425,
+      "failed_at": null
+    },
+    {
+      "feed": 50,
+      "target_share": 0.7,
+      "achieved_pct": 70.00000143277009,
+      "failed_at": null
+    },
+    {
+      "feed": 50,
+      "target_share": 0.9,
+      "achieved_pct": 89.99999947977867,
+      "failed_at": null
+    },
+    {
+      "feed": 50,
+      "target_share": 0.97,
+      "achieved_pct": 96.99999979325372,
+      "failed_at": null
+    }
+  ]
+}

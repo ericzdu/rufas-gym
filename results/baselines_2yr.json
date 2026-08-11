@@ -1,0 +1,229 @@
+{
+  "years": 2,
+  "episodes": 3,
+  "seeds": [
+    1000,
+    1001,
+    1002
+  ],
+  "price_process": "synthetic",
+  "price_levels": "realistic",
+  "arms": {
+    "configured": {
+      "mean_profit": 510076.4946860685,
+      "std_profit": 19397.246036220105,
+      "mean_feed_cost": 680266.5814111958,
+      "mean_milk_kg": 2587813.6325427983,
+      "n_failed": 0,
+      "runs": [
+        {
+          "failed": false,
+          "profit": 507535.78820452135,
+          "feed_cost": 671900.6555823309,
+          "milk_revenue": 1179436.443786852,
+          "milk_kg": 2548414.1419545994
+        },
+        {
+          "failed": false,
+          "profit": 487692.2851827233,
+          "feed_cost": 752760.9919958372,
+          "milk_revenue": 1240453.2771785606,
+          "milk_kg": 2627385.290672749
+        },
+        {
+          "failed": false,
+          "profit": 535001.4106709609,
+          "feed_cost": 616138.0966554191,
+          "milk_revenue": 1151139.5073263801,
+          "milk_kg": 2587641.465001047
+        }
+      ]
+    },
+    "neutral": {
+      "mean_profit": 21479.186677990667,
+      "std_profit": 48783.226318984896,
+      "mean_feed_cost": 1146852.6694182036,
+      "mean_milk_kg": 2539307.1158668366,
+      "n_failed": 0,
+      "runs": [
+        {
+          "failed": false,
+          "profit": -6146.7562400965835,
+          "feed_cost": 1162986.3537441278,
+          "milk_revenue": 1156839.5975040314,
+          "milk_kg": 2498201.6901281727
+        },
+        {
+          "failed": false,
+          "profit": -19455.537828630695,
+          "feed_cost": 1223500.644038626,
+          "milk_revenue": 1204045.1062099952,
+          "milk_kg": 2548644.2999904645
+        },
+        {
+          "failed": false,
+          "profit": 90039.85410269928,
+          "feed_cost": 1054071.0104718574,
+          "milk_revenue": 1144110.8645745562,
+          "milk_kg": 2571075.357481872
+        }
+      ]
+    },
+    "greedy_0.0": {
+      "mean_profit": 21479.186677990667,
+      "std_profit": 48783.226318984896,
+      "mean_feed_cost": 1146852.6694182036,
+      "mean_milk_kg": 2539307.1158668366,
+      "n_failed": 0,
+      "runs": [
+        {
+          "failed": false,
+          "profit": -6146.7562400965835,
+          "feed_cost": 1162986.3537441278,
+          "milk_revenue": 1156839.5975040314,
+          "milk_kg": 2498201.6901281727
+        },
+        {
+          "failed": false,
+          "profit": -19455.537828630695,
+          "feed_cost": 1223500.644038626,
+          "milk_revenue": 1204045.1062099952,
+          "milk_kg": 2548644.2999904645
+        },
+        {
+          "failed": false,
+          "profit": 90039.85410269928,
+          "feed_cost": 1054071.0104718574,
+          "milk_revenue": 1144110.8645745562,
+          "milk_kg": 2571075.357481872
+        }
+      ]
+    },
+    "greedy_0.25": {
+      "mean_profit": 526744.3232674134,
+      "std_profit": 16670.499102071008,
+      "mean_feed_cost": 662845.1850630912,
+      "mean_milk_kg": 2586301.090876132,
+      "n_failed": 0,
+      "runs": [
+        {
+          "failed": false,
+          "profit": 506803.6684479012,
+          "feed_cost": 672626.3553934884,
+          "milk_revenue": 1179430.0238413895,
+          "milk_kg": 2548412.3919545994
+        },
+        {
+          "failed": false,
+          "profit": 525822.6341285674,
+          "feed_cost": 712651.6880173736,
+          "milk_revenue": 1238474.322145941,
+          "milk_kg": 2623491.040672749
+        },
+        {
+          "failed": false,
+          "profit": 547606.6672257717,
+          "feed_cost": 603257.5117784117,
+          "milk_revenue": 1150864.1790041835,
+          "milk_kg": 2586999.840001047
+        }
+      ]
+    },
+    "greedy_0.5": {
+      "mean_profit": 661207.6557707262,
+      "std_profit": 1290.8660408105934,
+      "mean_feed_cost": 524298.5441929498,
+      "mean_milk_kg": 2585765.889771195,
+      "n_failed": 1,
+      "runs": [
+        {
+          "failed": true,
+          "failed_at": 13,
+          "profit": 340029.6056591021,
+          "feed_cost": 291461.7913406971,
+          "milk_revenue": 631491.3969997993,
+          "milk_kg": 1385794.5408843167
+        },
+        {
+          "failed": false,
+          "profit": 659916.7897299156,
+          "feed_cost": 562934.3810193444,
+          "milk_revenue": 1222851.17074926,
+          "milk_kg": 2589674.288378161
+        },
+        {
+          "failed": false,
+          "profit": 662498.5218115367,
+          "feed_cost": 485662.70736655523,
+          "milk_revenue": 1148161.2291780922,
+          "milk_kg": 2581857.491164229
+        }
+      ]
+    },
+    "greedy_0.75": {
+      "mean_profit": 688310.4731845772,
+      "std_profit": 12058.802201552084,
+      "mean_feed_cost": 495223.14800293813,
+      "mean_milk_kg": 2581121.139771195,
+      "n_failed": 1,
+      "runs": [
+        {
+          "failed": true,
+          "failed_at": 13,
+          "profit": 379453.66675102303,
+          "feed_cost": 248304.10198083572,
+          "milk_revenue": 627757.7687318587,
+          "milk_kg": 1378049.7908843167
+        },
+        {
+          "failed": false,
+          "profit": 676251.6709830251,
+          "feed_cost": 546599.4997662348,
+          "milk_revenue": 1222851.17074926,
+          "milk_kg": 2589674.288378161
+        },
+        {
+          "failed": false,
+          "profit": 700369.2753861293,
+          "feed_cost": 443846.79623964144,
+          "milk_revenue": 1144216.0716257708,
+          "milk_kg": 2572567.991164229
+        }
+      ]
+    },
+    "greedy_1.0": {
+      "mean_profit": 717074.7278004049,
+      "std_profit": 2933.1656885856646,
+      "mean_feed_cost": 457413.69007656653,
+      "mean_milk_kg": 2561784.001583985,
+      "n_failed": 1,
+      "runs": [
+        {
+          "failed": true,
+          "failed_at": 13,
+          "profit": 391395.1235181255,
+          "feed_cost": 236022.61057382886,
+          "milk_revenue": 627417.7340919543,
+          "milk_kg": 1377313.5408843167
+        },
+        {
+          "failed": false,
+          "profit": 720007.8934889905,
+          "feed_cost": 489521.88282970054,
+          "milk_revenue": 1209529.776318691,
+          "milk_kg": 2561592.7620037417
+        },
+        {
+          "failed": false,
+          "profit": 714141.5621118192,
+          "feed_cost": 425305.49732343253,
+          "milk_revenue": 1139447.0594352514,
+          "milk_kg": 2561975.241164229
+        }
+      ]
+    }
+  },
+  "best_fixed": "configured",
+  "best_greedy": "greedy_1.0",
+  "value_of_price_following": 206998.23311433638
+}

@@ -98,10 +98,14 @@ class ObservationLayout:
     """Where each block sits in the vector — handy for debugging and for `info`."""
 
     n_fields: int
+    #: Width of the trailing price block, 0 when prices are not observed. Appended last so
+    #: every existing index keeps its meaning.
+    n_price: int = 0
+    price_names: tuple[str, ...] = ()
 
     @property
     def size(self) -> int:
-        return N_CALENDAR + N_PER_FIELD * self.n_fields + N_HERD
+        return N_CALENDAR + N_PER_FIELD * self.n_fields + N_HERD + self.n_price
 
     def names(self) -> list[str]:
         names = ["month_sin", "month_cos", "year_progress"]
@@ -110,20 +114,31 @@ class ObservationLayout:
             names += [f"field{i}.crop.{a}" for a, _ in CROP_FEATURES]
             names += [f"field{i}.stress.{a}" for a in STRESS_FEATURES]
         names += [f"herd.{a}" for a, _ in HERD_FEATURES]
+        names += list(self.price_names)
         return names
 
 
 class FarmObserver:
-    """Extracts a fixed-length observation from a paused `SimulationEngine`."""
+    """Extracts a fixed-length observation from a paused `SimulationEngine`.
 
-    def __init__(self, n_fields: int) -> None:
-        self.layout = ObservationLayout(n_fields=n_fields)
+    `price_features` is optional: pass a `prices.PriceFeatures` to append the price block,
+    leave it None for the physical-state-only observation. The block goes at the end, so a
+    policy or a test written against the old layout still reads the same indices.
+    """
+
+    def __init__(self, n_fields: int, price_features=None) -> None:
+        self.price_features = price_features
+        self.layout = ObservationLayout(
+            n_fields=n_fields,
+            n_price=price_features.size if price_features is not None else 0,
+            price_names=tuple(price_features.names()) if price_features is not None else (),
+        )
 
     @property
     def size(self) -> int:
         return self.layout.size
 
-    def observe(self, engine) -> np.ndarray:
+    def observe(self, engine, price_block: np.ndarray | None = None) -> np.ndarray:
         out = np.zeros(self.size, dtype=np.float32)
         i = 0
 
@@ -179,6 +194,21 @@ class FarmObserver:
         for attr, scale in HERD_FEATURES:
             out[i] = _get(stats, attr) / scale
             i += 1
+
+        # --- prices ---
+        # Already log-ratios, so no scaling: they are dimensionless and O(0.1) by
+        # construction. A missing block stays zeroed, which reads as "every price is at
+        # its long-run mean and flat" — the right degradation.
+        if self.layout.n_price:
+            if price_block is not None:
+                block = np.asarray(price_block, dtype=np.float32).reshape(-1)
+                if block.size != self.layout.n_price:
+                    raise ValueError(
+                        f"Price block has {block.size} features, expected "
+                        f"{self.layout.n_price}"
+                    )
+                out[i:i + self.layout.n_price] = block
+            i += self.layout.n_price
 
         assert i == self.size, f"observation layout mismatch: wrote {i}, expected {self.size}"
         return np.clip(out, -OBS_CLIP, OBS_CLIP, out=out)

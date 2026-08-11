@@ -9,6 +9,14 @@ from rufas_rl.implementers import ACTION_LIMIT, RationImplementer
 from rufas_rl.spec import ScenarioSpec
 
 
+def _sequential_feed_ids(ration_sizes):
+    ids, n = [], 100
+    for size in ration_sizes:
+        ids.append(tuple(range(n, n + size)))
+        n += size
+    return tuple(ids)
+
+
 def make_spec(ration_sizes=(2, 7, 7, 7)) -> ScenarioSpec:
     from pathlib import Path
 
@@ -20,6 +28,9 @@ def make_spec(ration_sizes=(2, 7, 7, 7)) -> ScenarioSpec:
         end_year=2019,
         ration_sizes=ration_sizes,
         ration_groups=tuple(f"g{i}" for i in range(len(ration_sizes))),
+        # Synthetic feed IDs numbered globally, so feed id == 100 + action index. Keeps
+        # "cap feed X" and "set action slot i" unambiguous across rations.
+        ration_feed_ids=_sequential_feed_ids(ration_sizes),
         field_names=("field_1", "field_2"),
     )
 
@@ -54,17 +65,111 @@ def test_neutral_action_is_an_even_split(implementer):
     assert pytest.approx(decoded[1][0], abs=1e-9) == 100.0 / 7
 
 
-def test_extreme_action_concentrates_but_stays_below_the_crash_ceiling(implementer):
-    """LOGIT_SCALE lets one feed dominate, but is capped to keep rations out of the
-    concentration region that crashes RuFaS's manure chemistry (~60-80% single-feed)."""
+def test_a_feed_can_be_switched_off(implementer):
+    """The floor, which is what the old LOGIT_SCALE=1.5 actually cost us.
+
+    At 1.5 every feed had a 3.8% floor, so the five feeds a concentrated ration wants to
+    drop still took >=19% of it — which is why CMA-ES's 69.6/28.2/~2.2%-across-five
+    optimum was not expressible.
+
+    Two feeds carry the ration here rather than one, because shares must sum to 100: with
+    a single feed at the 85% inclusion cap the remaining 15% has to land somewhere, so
+    "one feed at ~100%, the rest at ~0%" is arithmetically impossible by design. What has
+    to be reachable is dropping a feed while *other* feeds absorb its mass.
+    """
     action = np.zeros(implementer.size)
-    action[2] = ACTION_LIMIT  # first feed of the 7-feed ration
+    action[2] = action[3] = ACTION_LIMIT  # two feeds share the ration
+    action[4:9] = -ACTION_LIMIT           # the other five are switched off
+    decoded = implementer.decode(action)[1]
+    assert max(decoded[2:]) < 0.5, f"floor still {max(decoded[2:]):.2f}%"
+    assert decoded[0] + decoded[1] > 99.0
+
+
+def test_cma_es_shaped_ration_is_expressible(implementer):
+    """The concrete shape the old action space could not reach, as a regression guard."""
+    target = [[50.0, 50.0], [69.6, 28.2, 0.6, 0.6, 0.5, 0.3, 0.2]] + [[100.0 / 7] * 7] * 2
+    recovered = implementer.decode(implementer.encode(target))[1]
+    assert np.allclose(target[1], recovered, atol=1.0), recovered
+
+
+def test_default_cap_bounds_every_feed(implementer):
+    """No action, however extreme, may exceed DEFAULT_MAX_INCLUSION on any feed."""
+    from rufas_rl.implementers import DEFAULT_MAX_INCLUSION
+
+    rng = np.random.default_rng(1)
+    worst = 0.0
+    for _ in range(300):
+        action = rng.uniform(-ACTION_LIMIT, ACTION_LIMIT, size=implementer.size)
+        for pcts in implementer.decode(action):
+            worst = max(worst, max(pcts))
+    assert worst <= DEFAULT_MAX_INCLUSION * 100.0 + 1e-6, f"reached {worst:.2f}%"
+
+
+def test_default_cap_sits_under_the_measured_crash_boundary():
+    """`scripts/probe_crash_boundary.py`: feed 301 crashed at 97%, nothing below 90%."""
+    from rufas_rl.implementers import DEFAULT_MAX_INCLUSION
+
+    assert DEFAULT_MAX_INCLUSION <= 0.90
+    # ...but not so tight that it re-blocks the ~70% profit-optimal ration, which is the
+    # mistake LOGIT_SCALE=1.5 made.
+    assert DEFAULT_MAX_INCLUSION >= 0.75
+
+
+def test_inclusion_caps_bound_concentration():
+    """Concentration is bounded by MAX_INCLUSION now, not by the softmax temperature."""
+    spec = make_spec()
+    capped = RationImplementer(spec, max_inclusion={102: 0.55})
+    action = np.zeros(capped.size)
+    action[2] = ACTION_LIMIT  # feed 102 == action slot 2, first of the 7-feed ration
     action[3:9] = -ACTION_LIMIT
-    # The worst-case one-hot action reaches ~77%; typical Gaussian exploration stays far
-    # lower (~54% at the 95th percentile), which is what keeps the per-episode crash rate
-    # near 5%. The point is only that concentration is bounded well below near-100%.
-    dominant = implementer.decode(action)[1][0]
-    assert 65.0 < dominant < 85.0, f"single-feed concentration {dominant:.1f}% off target"
+    decoded = capped.decode(action)[1]
+    assert decoded[0] == pytest.approx(55.0, abs=1e-6)
+    assert sum(decoded) == pytest.approx(100.0, abs=1e-6)
+
+
+def test_cap_shares_redistributes_proportionally():
+    from rufas_rl.implementers import cap_shares
+
+    out = cap_shares(np.array([0.8, 0.1, 0.1]), np.array([0.5, 1.0, 1.0]))
+    assert out[0] == pytest.approx(0.5)
+    assert out.sum() == pytest.approx(1.0)
+    assert out[1] == pytest.approx(out[2])  # equal inputs stay equal
+
+
+def test_cap_shares_handles_cascading_breaches():
+    """Pinning one element can push another over its own cap; it must re-run."""
+    from rufas_rl.implementers import cap_shares
+
+    out = cap_shares(np.array([0.7, 0.25, 0.05]), np.array([0.4, 0.3, 1.0]))
+    assert out[0] == pytest.approx(0.4)
+    assert out[1] == pytest.approx(0.3)
+    assert out[2] == pytest.approx(0.3)
+    assert out.sum() == pytest.approx(1.0)
+
+
+def test_cap_shares_is_a_noop_when_nothing_breaches():
+    from rufas_rl.implementers import cap_shares
+
+    shares = np.array([0.5, 0.3, 0.2])
+    assert np.allclose(cap_shares(shares, np.ones(3)), shares)
+
+
+def test_infeasible_caps_are_rejected():
+    from rufas_rl.implementers import cap_shares
+
+    with pytest.raises(ValueError, match="no valid ration|sum to"):
+        cap_shares(np.array([0.5, 0.5]), np.array([0.2, 0.2]))
+
+
+def test_capped_rations_still_sum_to_100():
+    spec = make_spec()
+    capped = RationImplementer(spec, max_inclusion={102: 0.4, 103: 0.3})
+    rng = np.random.default_rng(0)
+    for _ in range(100):
+        action = rng.uniform(-ACTION_LIMIT, ACTION_LIMIT, size=capped.size)
+        for pcts in capped.decode(action):
+            assert pytest.approx(sum(pcts), abs=1e-6) == 100.0
+            assert all(p >= 0.0 for p in pcts)
 
 
 def test_encode_decode_roundtrip(implementer):

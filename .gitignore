@@ -1,9 +1,51 @@
-.venv/
-venv/
+# --- Python ---
 __pycache__/
 *.py[cod]
-.pytest_cache/
+*.so
+.venv/
+venv/
+env/
 *.egg-info/
+build/
+dist/
+.eggs/
+
+# --- Tooling / caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+.coverage.*
+htmlcov/
+
+# --- OS / editor ---
 .DS_Store
+.DS_Store?
+._*
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# --- Local agent/tool settings ---
+.claude/settings.local.json
+
+# --- RuFaS / simulation scratch output ---
 output/
 runs/
+*.log
+
+# --- Training artifacts (regenerable; keep JSON summaries + figures) ---
+# TensorBoard event files
+**/tb/
+events.out.tfevents.*
+# Model checkpoints and VecNormalize stats
+*.zip
+*.pkl
+*.pt
+*.pth
+*.ckpt
+# Monitor CSVs from SB3
+monitor.csv
+*.monitor.csv

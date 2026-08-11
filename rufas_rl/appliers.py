@@ -157,6 +157,79 @@ class ManureApplier(_FieldScheduleApplier):
         field.manure_events = rebuilt
 
 
+class PriceApplier:
+    """Reprices the farm's feeds mid-run.
+
+    **Exogenous, not a lever.** Every other applier here carries an agent decision; this
+    one carries the market. It is driven by the episode's `PricePath`, never by the
+    action vector, and so is deliberately absent from `APPLIERS` and `get_applier` —
+    `EnvConfig.levers` must not be able to name it.
+
+    The mechanism is simpler than the other appliers and needs no rebuild step. RuFaS
+    builds one `list[Feed]` at construction (`AvailableFeedsBuilder.setup_available_feeds`)
+    and hands the *same list object* to the feed manager, the herd manager and every pen;
+    `Feed` is a plain mutable dataclass. So writing `purchase_cost` on the engine's feeds
+    is seen everywhere at once, with no reconstruction and no stale copies. Nothing
+    rebuilds that list mid-run, so there is nothing to fight with.
+
+    What repricing actually moves, as measured by `scripts/spike_prices.py`:
+
+    * **What RuFaS reports — yes.** `FeedManager.purchase_feed` prices purchases at
+      `Feed.purchase_cost` and writes `ration_interval_<id>_cost` to the output pool,
+      which is exactly what the `profit` rewarder reads. The cost side of the reward
+      stays RuFaS's own economics, now at the current month's prices.
+    * **What RuFaS physically feeds — no, not in this scenario.** Ration formulation
+      *is* a least-cost program (`RationOptimizer.objective` is `sum(amounts * prices)`,
+      re-solved every 30 days within 10% of the agent's ration), but a 30x relative price
+      swing moved the purchased kilograms by exactly zero. All cost coefficients are
+      positive, so the program sits at its all-lower-bounds corner whenever the NASEM
+      constraints are slack there, and that corner is price-independent.
+
+    Writing to the live objects anyway is still the right call: it keeps the reward
+    denominated in RuFaS's own reported dollars rather than a re-priced copy, and it
+    remains correct for a scenario whose nutrition constraints do bind. See `prices.py`
+    for what this means for the experiment — briefly, the agent's ration is the only
+    price-responsive channel, which removes a confound and demands a greedy heuristic
+    baseline.
+
+    `on_farm_cost` is kept at RuFaS's own fixed ratio to the purchase price for
+    consistency. It happens to be write-only in RuFaS today — nothing reads it — but
+    letting the two drift would be a trap for whoever wires up home-grown feed valuation.
+    """
+
+    lever = "prices"
+
+    def apply(self, prices) -> None:
+        """`prices` is a `PriceVector`; feeds it does not name are left alone."""
+        from RUFAS.data_structures.feed_storage_to_animal_connection import (
+            ON_FARM_TO_PURCHASED_PRICE_RATIO,
+        )
+
+        engine = _current_engine()
+        feeds = getattr(engine, "available_feeds", None)
+        if not feeds:
+            raise RuntimeError(
+                "The paused engine exposes no `available_feeds`; prices cannot be "
+                "applied. (A field-only scenario has no herd and no feeds — run the "
+                "price lever only on a scenario that simulates animals.)"
+            )
+
+        applied = 0
+        for feed in feeds:
+            price = prices.feed_price(feed.rufas_id)
+            if price is None:
+                continue
+            feed.purchase_cost = float(price)
+            feed.on_farm_cost = float(price) * ON_FARM_TO_PURCHASED_PRICE_RATIO
+            applied += 1
+
+        if applied == 0:
+            raise ValueError(
+                f"No scenario feed matched the price vector's IDs {sorted(prices.feeds)}. "
+                f"The engine offers {sorted(f.rufas_id for f in feeds)}."
+            )
+
+
 def _current_engine():
     """The live engine, set by the episode at each pause so appliers can reach it."""
     if _ENGINE[0] is None:

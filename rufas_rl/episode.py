@@ -22,11 +22,12 @@ from pathlib import Path
 
 import numpy as np
 
-from .appliers import get_applier, set_engine
+from .appliers import PriceApplier, get_applier, set_engine
 from .bootstrap import ensure_importable
 from .composite import CompositeImplementer, FIELD_LEVERS
 from .config import EnvConfig
 from .observers import FarmObserver
+from .prices import build_price_features, make_price_path
 from .rewarders import make_rewarder
 from .runtime import flush_singletons, prepare_metadata
 from .spec import ScenarioSpec, load_spec
@@ -45,7 +46,10 @@ class Episode:
         self.config = config
         self.spec = spec or load_spec(config.task_metadata_path, config.task_index)
         self.implementer = CompositeImplementer(self.spec, config.levers)
-        self.observer = FarmObserver(n_fields=self.spec.n_fields)
+        self.observer = FarmObserver(
+            n_fields=self.spec.n_fields,
+            price_features=build_price_features(self.spec, config),
+        )
         self.rewarder = make_rewarder(config.rewarder, **config.rewarder_kwargs)
         # One applier per lever. Field-lever appliers are stateful (cache a per-episode
         # baseline), so they are rebuilt on each start().
@@ -57,6 +61,10 @@ class Episode:
         self._last_obs: np.ndarray | None = None
         self._steps = 0
         self._done = False
+        # Exogenous prices. Built per-episode in start() so the path is a function of the
+        # episode seed; the applier is stateless and can be shared.
+        self.price_path = None
+        self.price_applier = PriceApplier()
 
     # -- lifecycle -------------------------------------------------------------
 
@@ -75,6 +83,16 @@ class Episode:
         )
         self.rewarder.reset()
         self.appliers = {lever: get_applier(lever) for lever in self.config.levers}
+        # The price path is drawn from the episode seed, so a seed pins the market as
+        # well as RuFaS's own RNG — two episodes with the same seed are identical runs.
+        self.price_path = make_price_path(
+            self.spec,
+            process=self.config.price_process,
+            n_months=self.spec.n_years * 12,
+            seed=seed,
+            levels=self.config.price_levels,
+            **self.config.price_kwargs,
+        )
         self._steps = 0
         self._done = False
 
@@ -90,7 +108,7 @@ class Episode:
         # Prime the rewarder so the first interval is measured from here, and discard
         # the reward it returns (nothing has elapsed yet).
         self.rewarder.reward(engine)
-        self._last_obs = self.observer.observe(engine)
+        self._last_obs = self._observe(engine)
         return self._last_obs, self._info(engine)
 
     def step(self, action: np.ndarray) -> tuple[np.ndarray, float, bool, bool, dict]:
@@ -105,6 +123,16 @@ class Episode:
         # the module-level registry rather than an argument.
         set_engine(self._engine)
         is_year_boundary = self._engine.time.current_date.month == 1
+
+        # Prices for the interval we are about to simulate, applied *before* resuming so
+        # RuFaS formulates and buys at them. The rewarder is moved to the same milk price
+        # and left there until after `advance()`, so the reward scored at the next pause
+        # values the interval at the prices that were actually in force during it.
+        prices = self.price_path.at(self._month_index(self._engine))
+        self.price_applier.apply(prices)
+        set_milk_price = getattr(self.rewarder, "set_milk_price", None)
+        if set_milk_price is not None:
+            set_milk_price(prices.milk)
 
         for lever, applier in self.appliers.items():
             # Rations can be reset at every boundary; field levers only at year starts,
@@ -141,7 +169,10 @@ class Episode:
             terminated = False
 
         reward, reward_info = self.rewarder.reward(engine)
-        obs = self.observer.observe(engine)
+        # Observed *after* advancing, so the price block shows the upcoming month's
+        # prices — the ones this observation's action will be paid at — while `reward`
+        # above was scored at the interval's own prices.
+        obs = self._observe(engine)
         self._last_obs = obs
 
         truncated = False
@@ -153,6 +184,9 @@ class Episode:
         info = self._info(engine)
         info.update(reward_info)
         info["action_decoded"] = decoded
+        # The prices this interval was scored at — not the next interval's. Diagnostics
+        # and the price-response check both need to line up prices with the reward.
+        info["prices"] = {"milk": prices.milk, "feeds": dict(prices.feeds)}
         return obs, float(reward), terminated, truncated, info
 
     def close(self) -> None:
@@ -183,6 +217,26 @@ class Episode:
     @property
     def action_size(self) -> int:
         return self.implementer.size
+
+    def _observe(self, engine) -> np.ndarray:
+        """Observation at the current pause, price block included when configured."""
+        block = None
+        if self.observer.price_features is not None and self.price_path is not None:
+            block = self.observer.price_features.extract(
+                self.price_path, self._month_index(engine)
+            )
+        return self.observer.observe(engine, price_block=block)
+
+    def _month_index(self, engine) -> int:
+        """Months elapsed since the scenario's start — the price path's index.
+
+        Derived from the simulation calendar rather than from `self._steps` so it stays
+        correct under any cadence. Note that a yearly cadence therefore holds one month's
+        prices for a whole simulated year; prices are a monthly series, so the price lever
+        is only fully meaningful at monthly cadence or finer.
+        """
+        date = engine.time.current_date
+        return (date.year - self.spec.start_year) * 12 + (date.month - 1)
 
     def _info(self, engine) -> dict:
         return {
