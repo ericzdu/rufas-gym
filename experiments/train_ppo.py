@@ -129,7 +129,13 @@ def _episode_return_callback(store: list):
             for info in self.locals.get("infos", []):
                 ep = info.get("episode")
                 if ep is not None:  # Monitor writes this at episode end
-                    store.append({"t": self.num_timesteps, "return": float(ep["r"])})
+                    # Crashes are recorded explicitly — Stage 1 lost ~90% of its episodes
+                    # to them, visible only as a cluster of -50 returns.
+                    failed = bool(info.get("simulation_failed"))
+                    store.append({"t": self.num_timesteps, "return": float(ep["r"]),
+                                  "failed": failed,
+                                  **({"failure_reason": info.get("failure_reason")}
+                                     if failed else {})})
             return True
 
     return _Recorder()
@@ -326,7 +332,9 @@ def main() -> None:
     stats_path = out / "vecnormalize.pkl"
     vec.save(str(stats_path))  # normalization stats needed to evaluate the policy
     vec.close()
-    print(f"\nTrained in {train_min:.1f} min ({len(curve)} episodes). Evaluating...")
+    n_failed = sum(c["failed"] for c in curve)
+    print(f"\nTrained in {train_min:.1f} min ({len(curve)} episodes, "
+          f"{n_failed} crashed). Evaluating...")
 
     learned = evaluate(model, args.years, seed=1000, stats_path=stats_path, **env_kwargs)
     baseline = evaluate_neutral(args.years, seed=1000, stats_path=stats_path, **env_kwargs)
@@ -353,6 +361,7 @@ def main() -> None:
     (out / "result.json").write_text(json.dumps({
         "train_min": train_min, "timesteps": args.timesteps, "n_envs": args.n_envs,
         "years": args.years, "n_episodes": len(curve),
+        "n_failed_episodes": sum(c["failed"] for c in curve),
         "learned": learned, "neutral": baseline, "gain_vs_neutral": gain,
         "price_process": args.price_process, "price_levels": args.price_levels,
         "warm_started": not args.no_warm_start, "gamma": 1.0,

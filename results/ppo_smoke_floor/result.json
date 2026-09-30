@@ -1,0 +1,282 @@
+{
+  "train_min": 3.9097668647766115,
+  "timesteps": 960,
+  "n_envs": 4,
+  "years": 2,
+  "n_episodes": 48,
+  "n_failed_episodes": 0,
+  "learned": {
+    "mean_return": 4.579023153831561,
+    "mean_profit": 457902.31607730873
+  },
+  "neutral": {
+    "mean_return": -0.16467230466029528,
+    "mean_profit": -16467.227733344007
+  },
+  "gain_vs_neutral": 474369.54381065274,
+  "price_process": "synthetic",
+  "price_levels": "realistic",
+  "warm_started": true,
+  "gamma": 1.0,
+  "levers": [
+    "rations"
+  ],
+  "price_response": {
+    "per_feed_spearman": {
+      "23": -0.02095093356491533,
+      "44": -0.062092922275293096,
+      "50": 0.2686712983065566,
+      "95": -0.2959183673469388,
+      "104": 0.003256621797655232,
+      "110": -0.23273990447242726,
+      "202": -0.6137646547980894,
+      "216": 0.4478940512375163,
+      "301": -0.09444203213200174,
+      "302": -0.5041250542770299
+    },
+    "mean_spearman": -0.11042118975249675,
+    "price_following": false
+  },
+  "curve": [
+    {
+      "t": 96,
+      "return": -0.193335,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 0.110407,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 4.775982,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 1.710276,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 1.790905,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 1.658747,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 1.887644,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 2.64227,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 2.990098,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 2.761686,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": -0.033333,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 3.622912,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": -0.053647,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 1.786763,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": -0.83973,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 4.350493,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": -0.164028,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 3.131054,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 2.346345,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 0.500918,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": -3.894984,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 3.643177,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 2.216882,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 3.508733,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 0.484827,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 1.946683,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 1.174515,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 4.093364,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 1.601218,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 2.519921,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 3.618078,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 1.368636,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 2.05583,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": -0.263214,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 2.42744,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 3.742028,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 1.618513,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 1.626848,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 2.711519,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 2.867985,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 2.659469,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 0.060263,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 2.313395,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 1.287257,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 3.787691,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": -0.325674,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 1.675048,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": -0.800618,
+      "failed": false
+    }
+  ]
+}

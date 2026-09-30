@@ -15,6 +15,7 @@ The traversal mirrors how RuFaS itself resolves a run:
 
 from __future__ import annotations
 
+import csv
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -52,6 +53,11 @@ class ScenarioSpec:
     #: constants a static path reproduces. Pairs rather than a dict so the frozen
     #: dataclass stays hashable; `dict(spec.feed_prices)` is the usual read.
     feed_prices: tuple[tuple[int, float], ...] = field(default_factory=tuple)
+    #: Crude protein (% of dry matter) of each feed in each ration, aligned with
+    #: `ration_feed_ids`; `None` where the composition table has no entry. From the
+    #: scenario's NASEM composition table — the same one RuFaS formulates against. Needed
+    #: for the protein floor in `implementers.py`.
+    ration_feed_cp: tuple[tuple[float | None, ...], ...] = field(default_factory=tuple)
 
     @property
     def n_action_slots(self) -> int:
@@ -68,6 +74,13 @@ class ScenarioSpec:
     def n_boundaries(self, cadence: str) -> int:
         """Upper bound on decision points, used to size the episode horizon."""
         return self.n_years * (12 if cadence == "monthly" else 1)
+
+
+def _read_crude_protein(path: str | Path) -> dict[int, float]:
+    """`rufas_id -> CP (% DM)` from a NASEM composition CSV."""
+    with resolve(path).open(newline="") as fh:
+        return {int(row["rufas_id"]): float(row["CP"])
+                for row in csv.DictReader(fh) if row.get("CP") not in (None, "")}
 
 
 def _parse_year(date_str: str) -> int:
@@ -106,6 +119,10 @@ def load_spec(
     feed_ids = tuple(sorted(prices))
     feed_prices = tuple((i, prices[i]) for i in feed_ids)
 
+    # Scenarios without a NASEM table (field-only) simply get no CP data.
+    cp = _read_crude_protein(files["NASEM_Comp"]["path"]) if "NASEM_Comp" in files else {}
+    ration_feed_cp = tuple(tuple(cp.get(fid) for fid in ids) for ids in ration_feed_ids)
+
     # Fields are declared as `field_1`, `field_2`, ... keys in the scenario metadata.
     field_names = tuple(sorted(k for k in files if k.startswith("field_")))
 
@@ -121,4 +138,5 @@ def load_spec(
         field_names=field_names,
         feed_ids=feed_ids,
         feed_prices=feed_prices,
+        ration_feed_cp=ration_feed_cp,
     )

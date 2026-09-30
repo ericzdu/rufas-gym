@@ -199,3 +199,70 @@ def test_action_space_is_normalized(implementer):
     assert np.allclose(space.low, -1.0)
     assert np.allclose(space.high, 1.0)
     assert space.shape == (implementer.size,)
+
+
+# -- protein floor -----------------------------------------------------------------
+
+def make_protein_spec(cps=(95.0, 8.5, 7.9, 20.0, 20.5, 0.04, 26.2)) -> ScenarioSpec:
+    """One lactating ration shaped like the freestall scenario's, with real CP values."""
+    from dataclasses import replace
+
+    spec = make_spec(ration_sizes=(len(cps),))
+    return replace(spec, ration_groups=("lac_cow",), ration_feed_cp=(tuple(cps),))
+
+
+def _cp(pcts, cps):
+    return sum(p * c for p, c in zip(pcts, cps)) / 100.0
+
+
+def test_no_action_decodes_below_the_protein_floor():
+    """The property that stops the crash: every action is a >=14% CP lactating ration."""
+    spec = make_protein_spec()
+    impl = RationImplementer(spec)
+    rng = np.random.default_rng(0)
+    for _ in range(500):
+        pcts = impl.decode(rng.uniform(-ACTION_LIMIT, ACTION_LIMIT, impl.size))[0]
+        assert _cp(pcts, spec.ration_feed_cp[0]) >= 14.0 - 1e-9
+        assert sum(pcts) == pytest.approx(100.0, abs=1e-6)
+        assert min(pcts) >= 0.0
+        assert max(pcts) <= 85.0 + 1e-6  # the blend must not break the inclusion caps
+
+
+def test_the_crashing_rations_are_lifted_exactly_to_the_floor():
+    """Rations that crashed RuFaS in the diagnostic (85% mineral mix; 78% corn grain)."""
+    spec = make_protein_spec()
+    impl = RationImplementer(spec)
+    for heavy in (5, 1):  # mineral mix, corn grain
+        action = np.full(impl.size, -ACTION_LIMIT)
+        action[heavy] = ACTION_LIMIT
+        pcts = impl.decode(action)[0]
+        assert _cp(pcts, spec.ration_feed_cp[0]) == pytest.approx(14.0, abs=1e-6)
+
+
+def test_rations_above_the_floor_are_untouched():
+    spec = make_protein_spec()
+    floored = RationImplementer(spec)
+    unfloored = RationImplementer(spec, min_crude_protein={})
+    action = np.zeros(floored.size)  # even split: ~25% CP
+    assert floored.decode(action) == unfloored.decode(action)
+
+
+def test_the_configured_farm_ration_passes_the_floor():
+    """The farm's own lactating ration (15.3% CP) must not be altered by the floor."""
+    from rufas_rl.implementers import MIN_CRUDE_PROTEIN
+
+    configured = [0.74, 15.31, 37.45, 0.37, 17.65, 3.27, 25.21]
+    real_cp = [95.06, 8.514, 7.91, 20.044, 20.471, 0.0351, 26.1583]
+    assert _cp(configured, real_cp) >= MIN_CRUDE_PROTEIN["lac_cow"]
+
+
+def test_floor_without_crude_protein_data_is_rejected():
+    spec = make_protein_spec(cps=(95.0, None, 7.9, 20.0, 20.5, 0.04, 26.2))
+    with pytest.raises(ValueError, match="crude protein"):
+        RationImplementer(spec)
+
+
+def test_unreachable_floor_is_rejected():
+    spec = make_protein_spec(cps=(9.0, 8.5, 7.9, 10.0, 10.5, 0.04, 12.0))
+    with pytest.raises(ValueError, match="reaches"):
+        RationImplementer(spec)

@@ -45,7 +45,9 @@ class Episode:
         ensure_importable()
         self.config = config
         self.spec = spec or load_spec(config.task_metadata_path, config.task_index)
-        self.implementer = CompositeImplementer(self.spec, config.levers)
+        self.implementer = CompositeImplementer(
+            self.spec, config.levers, config.min_crude_protein
+        )
         self.observer = FarmObserver(
             n_fields=self.spec.n_fields,
             price_features=build_price_features(self.spec, config),
@@ -144,14 +146,15 @@ class Episode:
 
         try:
             engine = self._stepper.advance()
-        except SimulationFailed:
+        except SimulationFailed as exc:
             if self.config.failure_penalty is None:
                 raise
             # End the episode as a penalised failure rather than taking down training.
             self._steps += 1
             self._done = True
             info = self._info(self._engine) if self._engine is not None else {}
-            info.update(simulation_failed=True, action_decoded=decoded)
+            info.update(simulation_failed=True, action_decoded=decoded,
+                        failure_reason=str(exc.__cause__ or exc))
             obs = self._last_obs
             if obs is None:
                 obs = np.zeros(self.observer.size, dtype=np.float32)

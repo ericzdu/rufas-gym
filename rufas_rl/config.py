@@ -54,6 +54,11 @@ class EnvConfig:
     #: `info["simulation_failed"] = True`. Left as None, the failure raises — the right
     #: default outside training, where a silent crash must not pass as a real terminal.
     failure_penalty: float | None = None
+    #: Minimum crude protein (% DM) per ration group, e.g. `{"lac_cow": 14.0}`. None uses
+    #: `implementers.MIN_CRUDE_PROTEIN`. This is what keeps RuFaS from crashing: a
+    #: low-protein lactating ration drives urine N — and so manure ammoniacal N —
+    #: negative. `{}` switches the floor off (expect crashes).
+    min_crude_protein: dict | None = None
 
     #: Field levers (fertilizer, manure) change only at year boundaries; rations change at
     #: every boundary. This mask is applied by the episode.

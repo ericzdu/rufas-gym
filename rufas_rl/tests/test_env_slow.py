@@ -97,16 +97,19 @@ def _draw(seed: int, index: int, size: int = 23) -> np.ndarray:
     return vec
 
 
-#: An extreme-but-valid ration (~91% of the lactating diet on one feed) that crashes
-#: RuFaS's manure ammonia calculation. Regression anchor: this used to surface as a
-#: healthy terminal step with reward 0 instead of as a failure.
+#: An extreme-but-valid ration that crashes RuFaS's manure ammonia calculation *when the
+#: protein floor is off*: its lactating diet is too low in crude protein, so urine N goes
+#: negative. Regression anchor: this used to surface as a healthy terminal step with
+#: reward 0 instead of as a failure. The failure-path tests switch the floor off
+#: (`min_crude_protein={}`) so they still exercise a real crash.
 _CRASHING_ACTION = _draw(0, 2)
+_NO_FLOOR = {}
 
 
 def test_simulation_failure_is_not_disguised_as_a_normal_episode_end():
     from rufas_rl.stepper import SimulationFailed
 
-    e = RufasEnv(EnvConfig(max_steps=3))
+    e = RufasEnv(EnvConfig(max_steps=3, min_crude_protein=_NO_FLOOR))
     try:
         e.reset(seed=11)
         with pytest.raises(Exception) as excinfo:
@@ -121,7 +124,7 @@ def test_simulation_failure_is_not_disguised_as_a_normal_episode_end():
 
 
 def test_failure_penalty_ends_the_episode_instead_of_raising():
-    e = RufasEnv(EnvConfig(max_steps=3, failure_penalty=-10.0))
+    e = RufasEnv(EnvConfig(max_steps=3, failure_penalty=-10.0, min_crude_protein=_NO_FLOOR))
     try:
         e.reset(seed=11)
         _, reward, terminated, _, info = e.step(_CRASHING_ACTION)
@@ -136,3 +139,16 @@ def test_close_is_idempotent(env):
     env.reset(seed=0)
     env.close()
     env.close()
+
+
+def test_protein_floor_keeps_the_crashing_action_alive():
+    """The same action that crashes above survives once the floor lifts its protein."""
+    e = RufasEnv(EnvConfig(max_steps=3))
+    try:
+        e.reset(seed=11)
+        for _ in range(3):
+            _, _, terminated, truncated, info = e.step(_CRASHING_ACTION)
+            assert not info.get("simulation_failed")
+        assert truncated and not terminated
+    finally:
+        e.close()

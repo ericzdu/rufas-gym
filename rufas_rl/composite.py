@@ -37,10 +37,16 @@ def _from_multiplier(mult: float) -> float:
 class CompositeImplementer:
     """Decodes one flat action into per-lever fragments."""
 
-    def __init__(self, spec: ScenarioSpec, levers: tuple[str, ...]) -> None:
+    def __init__(
+        self,
+        spec: ScenarioSpec,
+        levers: tuple[str, ...],
+        min_crude_protein: dict[str, float] | None = None,
+    ) -> None:
         self.spec = spec
         self.levers = tuple(levers)
-        self.ration = RationImplementer(spec) if "rations" in self.levers else None
+        self.ration = (RationImplementer(spec, min_crude_protein=min_crude_protein)
+                       if "rations" in self.levers else None)
         self.n_fields = spec.n_fields
         self.field_levers = tuple(lv for lv in self.levers if lv in FIELD_LEVERS)
 

@@ -106,6 +106,25 @@ def _task_failures() -> list[str]:
     return [key for key in pool if any(m in key for m in _TASK_FAILURE_MARKERS)]
 
 
+def _task_failure_causes() -> list[str]:
+    """The underlying exception messages behind those failures.
+
+    `TaskManager` records them as "Failed to recover from error: <msg>; traceback: ...".
+    Without this the only visible text is "Task(s) failed", which is how the real crash
+    cause (negative manure ammoniacal N) stayed hidden through a whole training run.
+    """
+    import re
+
+    from RUFAS.output_manager import OutputManager
+
+    pool = getattr(OutputManager(), "errors_pool", None) or {}
+    causes = []
+    for key, value in pool.items():
+        if any(m in key for m in _TASK_FAILURE_MARKERS):
+            causes += re.findall(r"Failed to recover from error: (.*?); traceback", str(value))
+    return causes
+
+
 class ThreadedPauseStepper:
     """Runs one RuFaS simulation, pausing it at each decision boundary.
 
@@ -282,7 +301,7 @@ class ThreadedPauseStepper:
                 raise SimulationFailed(
                     "RuFaS aborted the run and caught the error internally, so the "
                     "simulation stopped early rather than completing its horizon. "
-                    f"Recorded failures: {failures}"
+                    f"Recorded failures: {failures}. Cause: {_task_failure_causes()}"
                 )
             return None
         self._n_pauses += 1

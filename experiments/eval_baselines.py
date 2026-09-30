@@ -85,7 +85,8 @@ def run_episode(env, policy, steps: int, seed: int) -> dict:
         action = policy(path.at(step))
         _, _, terminated, truncated, info = env.step(action)
         if info.get("simulation_failed"):
-            return {"failed": True, "failed_at": step, **totals}
+            return {"failed": True, "failed_at": step,
+                    "failure_reason": info.get("failure_reason"), **totals}
         for key in totals:
             totals[key] += info[key]
         # Cross-check that the reconstructed path matches what the episode actually

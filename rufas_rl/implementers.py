@@ -62,6 +62,27 @@ LOGIT_SCALE = 5.0
 MAX_INCLUSION: dict[int, float] = {}
 DEFAULT_MAX_INCLUSION = 0.85
 
+#: Minimum crude protein (% of ration dry matter) per animal group, by `animal_combination`.
+#:
+#: This, not single-feed concentration, is what actually crashes RuFaS. Six random-action
+#: episodes under the caps above all died with the same error — "Manure total ammoniacal
+#: nitrogen must be greater than or equal to 0.0" — because the lactating-cow excretion
+#: model (`manure_excretion_calculator.py`, the Reed/Johnson form) computes urine N as a
+#: difference of two regressions:
+#:
+#:     urine N (g/d) = 38.8 + DMI * (1.046 * CP% - 10.1)
+#:
+#: which goes negative below roughly 8% CP at a 25 kg DMI, and that negative N is passed
+#: straight to the manure processor as ammoniacal N. Plenty of rations under every
+#: per-feed cap sit there (78% corn grain, 85% mineral mix). The other groups' excretion
+#: equations cannot go negative, so only the lactating ration is floored.
+#:
+#: 14% rather than the ~10% the crash alone demands: it is close to NASEM practice for
+#: lactating cows, so an optimizer cannot score by feeding a diet no farm would, and it
+#: leaves headroom for RuFaS's own +/-10% reformulation around the agent's ration. The
+#: scenario's configured lactating ration is 15.3% CP, so the farm's practice stays in.
+MIN_CRUDE_PROTEIN: dict[str, float] = {"lac_cow": 14.0}
+
 
 def softmax(x: np.ndarray) -> np.ndarray:
     e = np.exp(x - np.max(x))  # shift for numerical stability
@@ -106,6 +127,37 @@ def cap_shares(shares: np.ndarray, caps: np.ndarray) -> np.ndarray:
     return out
 
 
+def max_protein_shares(cp: np.ndarray, caps: np.ndarray) -> np.ndarray:
+    """The highest-CP ration the caps allow: fill feeds in descending CP to their caps."""
+    out = np.zeros(len(cp), dtype=np.float64)
+    remaining = 1.0
+    for i in np.argsort(-cp, kind="stable"):
+        take = min(caps[i], remaining)
+        out[i] = take
+        remaining -= take
+        if remaining <= 1e-12:
+            break
+    return out
+
+
+def enforce_min_protein(
+    shares: np.ndarray, cp: np.ndarray, floor: float, richest: np.ndarray
+) -> np.ndarray:
+    """Lift a ration to `floor` % CP by blending it toward `richest`, and no further.
+
+    Rations already at or above the floor are returned untouched. Otherwise the result is
+    the convex combination that lands exactly on the floor. Both endpoints satisfy the
+    simplex and the inclusion caps, so the blend does too — no re-projection needed — and
+    the policy's relative preferences survive in the part of the ration it still owns.
+    """
+    current = float(shares @ cp)
+    if current >= floor:
+        return shares
+    top = float(richest @ cp)
+    lam = (floor - current) / (top - current)
+    return (1.0 - lam) * shares + lam * richest
+
+
 class RationImplementer:
     """Maps a flat action vector to per-group ration percentages.
 
@@ -122,6 +174,7 @@ class RationImplementer:
         spec: ScenarioSpec,
         logit_scale: float | None = None,
         max_inclusion: dict[int, float] | None = None,
+        min_crude_protein: dict[str, float] | None = None,
     ) -> None:
         self.spec = spec
         self.logit_scale = LOGIT_SCALE if logit_scale is None else float(logit_scale)
@@ -143,6 +196,30 @@ class RationImplementer:
         ] if spec.ration_feed_ids else [
             np.full(size, DEFAULT_MAX_INCLUSION) for size in self.ration_sizes
         ]
+        self.min_crude_protein = (MIN_CRUDE_PROTEIN if min_crude_protein is None
+                                  else dict(min_crude_protein))
+        # Per ration: None, or (cp vector, floor, highest-CP capped ration). Groups the
+        # scenario does not have are skipped, so the synthetic test specs are unaffected.
+        self._protein: list[tuple[np.ndarray, float, np.ndarray] | None] = []
+        for i, (group, caps) in enumerate(zip(self.ration_groups, self._caps)):
+            floor = self.min_crude_protein.get(group)
+            if floor is None:
+                self._protein.append(None)
+                continue
+            cps = spec.ration_feed_cp[i] if i < len(spec.ration_feed_cp) else ()
+            if len(cps) != len(caps) or any(c is None for c in cps):
+                raise ValueError(
+                    f"Ration {group!r} has a {floor}% CP floor but the scenario gives no "
+                    f"crude protein for all of its feeds ({spec.ration_feed_ids[i]})."
+                )
+            cp = np.asarray(cps, dtype=np.float64)
+            richest = max_protein_shares(cp, caps)
+            if float(richest @ cp) < floor:
+                raise ValueError(
+                    f"Ration {group!r}: no ration within the inclusion caps reaches "
+                    f"{floor}% CP (the best is {float(richest @ cp):.2f}%)."
+                )
+            self._protein.append((cp, float(floor), richest))
 
     def action_space(self):
         from gymnasium import spaces
@@ -163,10 +240,12 @@ class RationImplementer:
             raise ValueError("Action contains non-finite values")
 
         out: list[list[float]] = []
-        for (start, end), caps in zip(self._offsets, self._caps):
+        for (start, end), caps, protein in zip(self._offsets, self._caps, self._protein):
             shares = softmax(action[start:end] * self.logit_scale)
             if (caps < 1.0).any():
                 shares = cap_shares(shares, caps)
+            if protein is not None:
+                shares = enforce_min_protein(shares, *protein)
             out.append((shares * 100.0).tolist())
         return out
 

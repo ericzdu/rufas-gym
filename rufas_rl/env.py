@@ -57,7 +57,9 @@ class RufasEnv(gym.Env):
         )
         self.render_mode = render_mode
 
-        self._implementer = CompositeImplementer(self.scenario_spec, self.config.levers)
+        self._implementer = CompositeImplementer(
+            self.scenario_spec, self.config.levers, self.config.min_crude_protein
+        )
         self._observer = FarmObserver(
             n_fields=self.scenario_spec.n_fields,
             price_features=build_price_features(self.scenario_spec, self.config),

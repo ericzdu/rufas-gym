@@ -1,0 +1,6372 @@
+{
+  "train_min": 209.14534231821696,
+  "timesteps": 30000,
+  "n_envs": 4,
+  "years": 2,
+  "n_episodes": 1265,
+  "n_failed_episodes": 5,
+  "learned": {
+    "mean_return": 5.466208892563979,
+    "mean_profit": 546620.8906221114
+  },
+  "neutral": {
+    "mean_return": 0.2042708782440362,
+    "mean_profit": 20427.088120388857
+  },
+  "gain_vs_neutral": 526193.8025017225,
+  "price_process": "synthetic",
+  "price_levels": "realistic",
+  "warm_started": true,
+  "gamma": 1.0,
+  "levers": [
+    "rations"
+  ],
+  "price_response": {
+    "per_feed_spearman": {
+      "23": -0.00803300043421624,
+      "44": -0.165979157620495,
+      "50": 0.16500217108119844,
+      "95": -0.33130699088145893,
+      "104": -0.11235345201910552,
+      "110": -0.22427268779852366,
+      "202": -0.37631912322043026,
+      "216": 0.11346444629351711,
+      "301": 0.23382544507164568,
+      "302": -0.0031480677377333914
+    },
+    "mean_spearman": -0.07091204172656017,
+    "price_following": false
+  },
+  "curve": [
+    {
+      "t": 96,
+      "return": -0.489683,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 0.110407,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 4.775982,
+      "failed": false
+    },
+    {
+      "t": 96,
+      "return": 1.710276,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 0.8605,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": -2.01425,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": 4.774201,
+      "failed": false
+    },
+    {
+      "t": 192,
+      "return": -0.226545,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 2.298818,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 3.346455,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 5.686693,
+      "failed": false
+    },
+    {
+      "t": 288,
+      "return": 2.156507,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 1.96826,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 2.754689,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 0.642977,
+      "failed": false
+    },
+    {
+      "t": 384,
+      "return": 2.56051,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 1.645358,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 1.592764,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": -0.222748,
+      "failed": false
+    },
+    {
+      "t": 480,
+      "return": 0.529568,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": -1.706809,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 3.945037,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 0.660224,
+      "failed": false
+    },
+    {
+      "t": 576,
+      "return": 3.194153,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 2.519819,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 1.458585,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 4.138527,
+      "failed": false
+    },
+    {
+      "t": 672,
+      "return": 1.439596,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 1.851304,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 2.965171,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": -0.146205,
+      "failed": false
+    },
+    {
+      "t": 768,
+      "return": 2.685052,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 4.077739,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 1.998529,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 3.044836,
+      "failed": false
+    },
+    {
+      "t": 864,
+      "return": 3.116332,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 2.990171,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 3.136279,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 3.350322,
+      "failed": false
+    },
+    {
+      "t": 960,
+      "return": 3.427233,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 2.090272,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 3.502041,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 3.452542,
+      "failed": false
+    },
+    {
+      "t": 1056,
+      "return": 0.748896,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 2.113507,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 1.198674,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 1.865387,
+      "failed": false
+    },
+    {
+      "t": 1152,
+      "return": 0.347421,
+      "failed": false
+    },
+    {
+      "t": 1248,
+      "return": 2.277924,
+      "failed": false
+    },
+    {
+      "t": 1248,
+      "return": -0.150791,
+      "failed": false
+    },
+    {
+      "t": 1248,
+      "return": 1.776734,
+      "failed": false
+    },
+    {
+      "t": 1248,
+      "return": 3.528902,
+      "failed": false
+    },
+    {
+      "t": 1344,
+      "return": 2.491553,
+      "failed": false
+    },
+    {
+      "t": 1344,
+      "return": 1.725327,
+      "failed": false
+    },
+    {
+      "t": 1344,
+      "return": 2.263961,
+      "failed": false
+    },
+    {
+      "t": 1344,
+      "return": 0.717355,
+      "failed": false
+    },
+    {
+      "t": 1440,
+      "return": 0.196638,
+      "failed": false
+    },
+    {
+      "t": 1440,
+      "return": 0.290687,
+      "failed": false
+    },
+    {
+      "t": 1440,
+      "return": 1.078952,
+      "failed": false
+    },
+    {
+      "t": 1440,
+      "return": 2.000672,
+      "failed": false
+    },
+    {
+      "t": 1536,
+      "return": 4.221391,
+      "failed": false
+    },
+    {
+      "t": 1536,
+      "return": 1.727463,
+      "failed": false
+    },
+    {
+      "t": 1536,
+      "return": 1.330425,
+      "failed": false
+    },
+    {
+      "t": 1536,
+      "return": 0.317814,
+      "failed": false
+    },
+    {
+      "t": 1632,
+      "return": -0.433768,
+      "failed": false
+    },
+    {
+      "t": 1632,
+      "return": 0.202269,
+      "failed": false
+    },
+    {
+      "t": 1632,
+      "return": 0.438589,
+      "failed": false
+    },
+    {
+      "t": 1632,
+      "return": 1.100103,
+      "failed": false
+    },
+    {
+      "t": 1728,
+      "return": 0.37798,
+      "failed": false
+    },
+    {
+      "t": 1728,
+      "return": 0.634503,
+      "failed": false
+    },
+    {
+      "t": 1728,
+      "return": 0.036521,
+      "failed": false
+    },
+    {
+      "t": 1728,
+      "return": 0.121891,
+      "failed": false
+    },
+    {
+      "t": 1824,
+      "return": 2.568474,
+      "failed": false
+    },
+    {
+      "t": 1824,
+      "return": 1.465481,
+      "failed": false
+    },
+    {
+      "t": 1824,
+      "return": 4.91898,
+      "failed": false
+    },
+    {
+      "t": 1824,
+      "return": 3.431496,
+      "failed": false
+    },
+    {
+      "t": 1920,
+      "return": 2.169298,
+      "failed": false
+    },
+    {
+      "t": 1920,
+      "return": 0.622286,
+      "failed": false
+    },
+    {
+      "t": 1920,
+      "return": 3.79449,
+      "failed": false
+    },
+    {
+      "t": 1920,
+      "return": 4.367383,
+      "failed": false
+    },
+    {
+      "t": 2016,
+      "return": 0.050979,
+      "failed": false
+    },
+    {
+      "t": 2016,
+      "return": 2.743242,
+      "failed": false
+    },
+    {
+      "t": 2016,
+      "return": 1.92979,
+      "failed": false
+    },
+    {
+      "t": 2016,
+      "return": 3.003882,
+      "failed": false
+    },
+    {
+      "t": 2112,
+      "return": 1.493763,
+      "failed": false
+    },
+    {
+      "t": 2112,
+      "return": 0.397614,
+      "failed": false
+    },
+    {
+      "t": 2112,
+      "return": 1.02219,
+      "failed": false
+    },
+    {
+      "t": 2112,
+      "return": 4.22161,
+      "failed": false
+    },
+    {
+      "t": 2208,
+      "return": 0.676468,
+      "failed": false
+    },
+    {
+      "t": 2208,
+      "return": 2.676511,
+      "failed": false
+    },
+    {
+      "t": 2208,
+      "return": 0.399884,
+      "failed": false
+    },
+    {
+      "t": 2208,
+      "return": -0.142464,
+      "failed": false
+    },
+    {
+      "t": 2228,
+      "return": -49.679651,
+      "failed": true,
+      "failure_reason": "RuFaS aborted the run and caught the error internally, so the simulation stopped early rather than completing its horizon. Recorded failures: ['TaskManager.task.Failed to finish task: 1/1 with output prefix: freestall', 'TaskManager._run_tasks.Task(s) failed']. Cause: ['NutrientRequestResults Error: ammonium_nitrogen_fraction must be between 0 and 1.']"
+    },
+    {
+      "t": 2304,
+      "return": 1.975744,
+      "failed": false
+    },
+    {
+      "t": 2304,
+      "return": 1.147606,
+      "failed": false
+    },
+    {
+      "t": 2304,
+      "return": 0.470669,
+      "failed": false
+    },
+    {
+      "t": 2324,
+      "return": 4.28879,
+      "failed": false
+    },
+    {
+      "t": 2400,
+      "return": 3.717429,
+      "failed": false
+    },
+    {
+      "t": 2400,
+      "return": 1.432413,
+      "failed": false
+    },
+    {
+      "t": 2400,
+      "return": 1.180805,
+      "failed": false
+    },
+    {
+      "t": 2420,
+      "return": 1.272303,
+      "failed": false
+    },
+    {
+      "t": 2496,
+      "return": 1.176619,
+      "failed": false
+    },
+    {
+      "t": 2496,
+      "return": -0.212999,
+      "failed": false
+    },
+    {
+      "t": 2496,
+      "return": 1.229901,
+      "failed": false
+    },
+    {
+      "t": 2516,
+      "return": 1.155772,
+      "failed": false
+    },
+    {
+      "t": 2592,
+      "return": 2.866938,
+      "failed": false
+    },
+    {
+      "t": 2592,
+      "return": 1.050824,
+      "failed": false
+    },
+    {
+      "t": 2592,
+      "return": 1.95497,
+      "failed": false
+    },
+    {
+      "t": 2612,
+      "return": 2.264233,
+      "failed": false
+    },
+    {
+      "t": 2688,
+      "return": 2.291948,
+      "failed": false
+    },
+    {
+      "t": 2688,
+      "return": 0.632187,
+      "failed": false
+    },
+    {
+      "t": 2688,
+      "return": 0.30198,
+      "failed": false
+    },
+    {
+      "t": 2708,
+      "return": -0.08628,
+      "failed": false
+    },
+    {
+      "t": 2784,
+      "return": 2.167309,
+      "failed": false
+    },
+    {
+      "t": 2784,
+      "return": -1.718479,
+      "failed": false
+    },
+    {
+      "t": 2784,
+      "return": 2.148067,
+      "failed": false
+    },
+    {
+      "t": 2804,
+      "return": 3.546756,
+      "failed": false
+    },
+    {
+      "t": 2880,
+      "return": 0.762328,
+      "failed": false
+    },
+    {
+      "t": 2880,
+      "return": 1.657356,
+      "failed": false
+    },
+    {
+      "t": 2880,
+      "return": 2.861855,
+      "failed": false
+    },
+    {
+      "t": 2900,
+      "return": 1.353479,
+      "failed": false
+    },
+    {
+      "t": 2976,
+      "return": 1.625848,
+      "failed": false
+    },
+    {
+      "t": 2976,
+      "return": 5.725349,
+      "failed": false
+    },
+    {
+      "t": 2976,
+      "return": 2.307554,
+      "failed": false
+    },
+    {
+      "t": 2996,
+      "return": 3.486575,
+      "failed": false
+    },
+    {
+      "t": 3072,
+      "return": 0.938812,
+      "failed": false
+    },
+    {
+      "t": 3072,
+      "return": 0.955238,
+      "failed": false
+    },
+    {
+      "t": 3072,
+      "return": 2.684848,
+      "failed": false
+    },
+    {
+      "t": 3092,
+      "return": 2.703409,
+      "failed": false
+    },
+    {
+      "t": 3168,
+      "return": 1.594506,
+      "failed": false
+    },
+    {
+      "t": 3168,
+      "return": 2.376074,
+      "failed": false
+    },
+    {
+      "t": 3168,
+      "return": 1.228418,
+      "failed": false
+    },
+    {
+      "t": 3188,
+      "return": 2.435407,
+      "failed": false
+    },
+    {
+      "t": 3264,
+      "return": 1.77995,
+      "failed": false
+    },
+    {
+      "t": 3264,
+      "return": 1.181111,
+      "failed": false
+    },
+    {
+      "t": 3264,
+      "return": 1.111327,
+      "failed": false
+    },
+    {
+      "t": 3284,
+      "return": -0.841806,
+      "failed": false
+    },
+    {
+      "t": 3360,
+      "return": 0.813205,
+      "failed": false
+    },
+    {
+      "t": 3360,
+      "return": 0.90185,
+      "failed": false
+    },
+    {
+      "t": 3360,
+      "return": 2.467832,
+      "failed": false
+    },
+    {
+      "t": 3380,
+      "return": 2.141061,
+      "failed": false
+    },
+    {
+      "t": 3456,
+      "return": 1.460947,
+      "failed": false
+    },
+    {
+      "t": 3456,
+      "return": 0.799759,
+      "failed": false
+    },
+    {
+      "t": 3456,
+      "return": 2.650859,
+      "failed": false
+    },
+    {
+      "t": 3476,
+      "return": 1.791777,
+      "failed": false
+    },
+    {
+      "t": 3552,
+      "return": 0.027737,
+      "failed": false
+    },
+    {
+      "t": 3552,
+      "return": 5.59503,
+      "failed": false
+    },
+    {
+      "t": 3552,
+      "return": 2.177748,
+      "failed": false
+    },
+    {
+      "t": 3572,
+      "return": 1.715593,
+      "failed": false
+    },
+    {
+      "t": 3648,
+      "return": 2.601574,
+      "failed": false
+    },
+    {
+      "t": 3648,
+      "return": 1.170517,
+      "failed": false
+    },
+    {
+      "t": 3648,
+      "return": 1.427472,
+      "failed": false
+    },
+    {
+      "t": 3668,
+      "return": 2.626196,
+      "failed": false
+    },
+    {
+      "t": 3744,
+      "return": 2.335954,
+      "failed": false
+    },
+    {
+      "t": 3744,
+      "return": 0.256261,
+      "failed": false
+    },
+    {
+      "t": 3744,
+      "return": 4.134815,
+      "failed": false
+    },
+    {
+      "t": 3764,
+      "return": 0.583312,
+      "failed": false
+    },
+    {
+      "t": 3840,
+      "return": 0.737599,
+      "failed": false
+    },
+    {
+      "t": 3840,
+      "return": 2.541648,
+      "failed": false
+    },
+    {
+      "t": 3840,
+      "return": 1.151001,
+      "failed": false
+    },
+    {
+      "t": 3860,
+      "return": 1.012425,
+      "failed": false
+    },
+    {
+      "t": 3936,
+      "return": 2.586439,
+      "failed": false
+    },
+    {
+      "t": 3936,
+      "return": 2.477639,
+      "failed": false
+    },
+    {
+      "t": 3936,
+      "return": 0.863085,
+      "failed": false
+    },
+    {
+      "t": 3956,
+      "return": 3.400073,
+      "failed": false
+    },
+    {
+      "t": 4032,
+      "return": 3.136314,
+      "failed": false
+    },
+    {
+      "t": 4032,
+      "return": 4.201092,
+      "failed": false
+    },
+    {
+      "t": 4032,
+      "return": 4.016963,
+      "failed": false
+    },
+    {
+      "t": 4052,
+      "return": 0.704761,
+      "failed": false
+    },
+    {
+      "t": 4128,
+      "return": 3.453674,
+      "failed": false
+    },
+    {
+      "t": 4128,
+      "return": -0.798238,
+      "failed": false
+    },
+    {
+      "t": 4128,
+      "return": 1.669296,
+      "failed": false
+    },
+    {
+      "t": 4148,
+      "return": 0.794018,
+      "failed": false
+    },
+    {
+      "t": 4224,
+      "return": 2.994004,
+      "failed": false
+    },
+    {
+      "t": 4224,
+      "return": 1.152961,
+      "failed": false
+    },
+    {
+      "t": 4224,
+      "return": 2.584487,
+      "failed": false
+    },
+    {
+      "t": 4244,
+      "return": 3.237132,
+      "failed": false
+    },
+    {
+      "t": 4320,
+      "return": 1.259522,
+      "failed": false
+    },
+    {
+      "t": 4320,
+      "return": 3.694476,
+      "failed": false
+    },
+    {
+      "t": 4320,
+      "return": -0.234602,
+      "failed": false
+    },
+    {
+      "t": 4340,
+      "return": -0.630068,
+      "failed": false
+    },
+    {
+      "t": 4416,
+      "return": 3.500103,
+      "failed": false
+    },
+    {
+      "t": 4416,
+      "return": 3.150039,
+      "failed": false
+    },
+    {
+      "t": 4416,
+      "return": 1.688906,
+      "failed": false
+    },
+    {
+      "t": 4436,
+      "return": 3.318257,
+      "failed": false
+    },
+    {
+      "t": 4512,
+      "return": 3.494498,
+      "failed": false
+    },
+    {
+      "t": 4512,
+      "return": 2.300621,
+      "failed": false
+    },
+    {
+      "t": 4512,
+      "return": 1.299167,
+      "failed": false
+    },
+    {
+      "t": 4532,
+      "return": 1.638448,
+      "failed": false
+    },
+    {
+      "t": 4608,
+      "return": 2.551193,
+      "failed": false
+    },
+    {
+      "t": 4608,
+      "return": 3.819113,
+      "failed": false
+    },
+    {
+      "t": 4608,
+      "return": 5.001558,
+      "failed": false
+    },
+    {
+      "t": 4628,
+      "return": 4.286456,
+      "failed": false
+    },
+    {
+      "t": 4704,
+      "return": 1.000402,
+      "failed": false
+    },
+    {
+      "t": 4704,
+      "return": 2.106179,
+      "failed": false
+    },
+    {
+      "t": 4704,
+      "return": 0.292321,
+      "failed": false
+    },
+    {
+      "t": 4724,
+      "return": 0.640008,
+      "failed": false
+    },
+    {
+      "t": 4800,
+      "return": 1.440496,
+      "failed": false
+    },
+    {
+      "t": 4800,
+      "return": 2.131793,
+      "failed": false
+    },
+    {
+      "t": 4800,
+      "return": 3.575428,
+      "failed": false
+    },
+    {
+      "t": 4820,
+      "return": 2.090725,
+      "failed": false
+    },
+    {
+      "t": 4896,
+      "return": 3.106201,
+      "failed": false
+    },
+    {
+      "t": 4896,
+      "return": 3.445798,
+      "failed": false
+    },
+    {
+      "t": 4896,
+      "return": 0.005397,
+      "failed": false
+    },
+    {
+      "t": 4916,
+      "return": 2.228052,
+      "failed": false
+    },
+    {
+      "t": 4992,
+      "return": 3.816321,
+      "failed": false
+    },
+    {
+      "t": 4992,
+      "return": 1.505439,
+      "failed": false
+    },
+    {
+      "t": 4992,
+      "return": -0.010462,
+      "failed": false
+    },
+    {
+      "t": 5012,
+      "return": 2.142045,
+      "failed": false
+    },
+    {
+      "t": 5088,
+      "return": 2.938486,
+      "failed": false
+    },
+    {
+      "t": 5088,
+      "return": 2.669135,
+      "failed": false
+    },
+    {
+      "t": 5088,
+      "return": 2.728502,
+      "failed": false
+    },
+    {
+      "t": 5108,
+      "return": 3.037388,
+      "failed": false
+    },
+    {
+      "t": 5108,
+      "return": -49.647762,
+      "failed": true,
+      "failure_reason": "RuFaS aborted the run and caught the error internally, so the simulation stopped early rather than completing its horizon. Recorded failures: ['TaskManager.task.Failed to finish task: 1/1 with output prefix: freestall', 'TaskManager._run_tasks.Task(s) failed']. Cause: ['NutrientRequestResults Error: ammonium_nitrogen_fraction must be between 0 and 1.']"
+    },
+    {
+      "t": 5184,
+      "return": 1.034536,
+      "failed": false
+    },
+    {
+      "t": 5184,
+      "return": 3.184045,
+      "failed": false
+    },
+    {
+      "t": 5204,
+      "return": 1.198862,
+      "failed": false
+    },
+    {
+      "t": 5204,
+      "return": 1.093952,
+      "failed": false
+    },
+    {
+      "t": 5280,
+      "return": 3.331277,
+      "failed": false
+    },
+    {
+      "t": 5280,
+      "return": 4.044043,
+      "failed": false
+    },
+    {
+      "t": 5300,
+      "return": 2.000473,
+      "failed": false
+    },
+    {
+      "t": 5300,
+      "return": 2.363566,
+      "failed": false
+    },
+    {
+      "t": 5376,
+      "return": 2.901508,
+      "failed": false
+    },
+    {
+      "t": 5376,
+      "return": 3.73314,
+      "failed": false
+    },
+    {
+      "t": 5396,
+      "return": 1.994174,
+      "failed": false
+    },
+    {
+      "t": 5396,
+      "return": 1.312319,
+      "failed": false
+    },
+    {
+      "t": 5472,
+      "return": 4.021721,
+      "failed": false
+    },
+    {
+      "t": 5472,
+      "return": 3.092533,
+      "failed": false
+    },
+    {
+      "t": 5492,
+      "return": -2.132731,
+      "failed": false
+    },
+    {
+      "t": 5492,
+      "return": 1.71769,
+      "failed": false
+    },
+    {
+      "t": 5568,
+      "return": 2.097441,
+      "failed": false
+    },
+    {
+      "t": 5568,
+      "return": 3.141792,
+      "failed": false
+    },
+    {
+      "t": 5588,
+      "return": 0.901089,
+      "failed": false
+    },
+    {
+      "t": 5588,
+      "return": 2.120371,
+      "failed": false
+    },
+    {
+      "t": 5664,
+      "return": 1.644747,
+      "failed": false
+    },
+    {
+      "t": 5664,
+      "return": 2.702709,
+      "failed": false
+    },
+    {
+      "t": 5684,
+      "return": 0.561278,
+      "failed": false
+    },
+    {
+      "t": 5684,
+      "return": 2.703398,
+      "failed": false
+    },
+    {
+      "t": 5760,
+      "return": 1.289096,
+      "failed": false
+    },
+    {
+      "t": 5760,
+      "return": 0.926713,
+      "failed": false
+    },
+    {
+      "t": 5780,
+      "return": 1.856664,
+      "failed": false
+    },
+    {
+      "t": 5780,
+      "return": 0.536024,
+      "failed": false
+    },
+    {
+      "t": 5856,
+      "return": 3.740548,
+      "failed": false
+    },
+    {
+      "t": 5856,
+      "return": -0.008369,
+      "failed": false
+    },
+    {
+      "t": 5876,
+      "return": 0.805881,
+      "failed": false
+    },
+    {
+      "t": 5876,
+      "return": 1.696443,
+      "failed": false
+    },
+    {
+      "t": 5952,
+      "return": -0.514517,
+      "failed": false
+    },
+    {
+      "t": 5952,
+      "return": 1.497183,
+      "failed": false
+    },
+    {
+      "t": 5972,
+      "return": 3.262236,
+      "failed": false
+    },
+    {
+      "t": 5972,
+      "return": 1.788994,
+      "failed": false
+    },
+    {
+      "t": 6048,
+      "return": 2.859524,
+      "failed": false
+    },
+    {
+      "t": 6048,
+      "return": 1.76309,
+      "failed": false
+    },
+    {
+      "t": 6068,
+      "return": 2.140041,
+      "failed": false
+    },
+    {
+      "t": 6068,
+      "return": 1.526716,
+      "failed": false
+    },
+    {
+      "t": 6144,
+      "return": 2.000434,
+      "failed": false
+    },
+    {
+      "t": 6144,
+      "return": 3.839229,
+      "failed": false
+    },
+    {
+      "t": 6164,
+      "return": 2.015925,
+      "failed": false
+    },
+    {
+      "t": 6164,
+      "return": -1.493805,
+      "failed": false
+    },
+    {
+      "t": 6240,
+      "return": 1.751641,
+      "failed": false
+    },
+    {
+      "t": 6240,
+      "return": 1.583275,
+      "failed": false
+    },
+    {
+      "t": 6260,
+      "return": -0.429497,
+      "failed": false
+    },
+    {
+      "t": 6260,
+      "return": 2.5188,
+      "failed": false
+    },
+    {
+      "t": 6336,
+      "return": 2.200163,
+      "failed": false
+    },
+    {
+      "t": 6336,
+      "return": 2.859146,
+      "failed": false
+    },
+    {
+      "t": 6356,
+      "return": 2.86452,
+      "failed": false
+    },
+    {
+      "t": 6356,
+      "return": 3.437074,
+      "failed": false
+    },
+    {
+      "t": 6432,
+      "return": 1.012736,
+      "failed": false
+    },
+    {
+      "t": 6432,
+      "return": 0.538876,
+      "failed": false
+    },
+    {
+      "t": 6452,
+      "return": -0.305245,
+      "failed": false
+    },
+    {
+      "t": 6452,
+      "return": 1.251946,
+      "failed": false
+    },
+    {
+      "t": 6528,
+      "return": 4.683047,
+      "failed": false
+    },
+    {
+      "t": 6528,
+      "return": 4.434766,
+      "failed": false
+    },
+    {
+      "t": 6548,
+      "return": 4.618212,
+      "failed": false
+    },
+    {
+      "t": 6548,
+      "return": 1.029466,
+      "failed": false
+    },
+    {
+      "t": 6624,
+      "return": 1.573563,
+      "failed": false
+    },
+    {
+      "t": 6624,
+      "return": 2.946506,
+      "failed": false
+    },
+    {
+      "t": 6644,
+      "return": 2.304789,
+      "failed": false
+    },
+    {
+      "t": 6644,
+      "return": 5.261309,
+      "failed": false
+    },
+    {
+      "t": 6720,
+      "return": 1.685573,
+      "failed": false
+    },
+    {
+      "t": 6720,
+      "return": 2.954523,
+      "failed": false
+    },
+    {
+      "t": 6740,
+      "return": 3.369142,
+      "failed": false
+    },
+    {
+      "t": 6740,
+      "return": 4.09487,
+      "failed": false
+    },
+    {
+      "t": 6816,
+      "return": 1.335308,
+      "failed": false
+    },
+    {
+      "t": 6816,
+      "return": 5.289466,
+      "failed": false
+    },
+    {
+      "t": 6836,
+      "return": 3.112785,
+      "failed": false
+    },
+    {
+      "t": 6836,
+      "return": -1.407247,
+      "failed": false
+    },
+    {
+      "t": 6912,
+      "return": 2.609314,
+      "failed": false
+    },
+    {
+      "t": 6912,
+      "return": 1.745243,
+      "failed": false
+    },
+    {
+      "t": 6932,
+      "return": 3.420932,
+      "failed": false
+    },
+    {
+      "t": 6932,
+      "return": 2.155123,
+      "failed": false
+    },
+    {
+      "t": 7008,
+      "return": 2.255488,
+      "failed": false
+    },
+    {
+      "t": 7008,
+      "return": 2.317718,
+      "failed": false
+    },
+    {
+      "t": 7028,
+      "return": 2.555026,
+      "failed": false
+    },
+    {
+      "t": 7028,
+      "return": 2.892301,
+      "failed": false
+    },
+    {
+      "t": 7104,
+      "return": 2.880347,
+      "failed": false
+    },
+    {
+      "t": 7104,
+      "return": 1.929437,
+      "failed": false
+    },
+    {
+      "t": 7124,
+      "return": 5.188495,
+      "failed": false
+    },
+    {
+      "t": 7124,
+      "return": 4.638172,
+      "failed": false
+    },
+    {
+      "t": 7200,
+      "return": 2.573601,
+      "failed": false
+    },
+    {
+      "t": 7200,
+      "return": 0.802995,
+      "failed": false
+    },
+    {
+      "t": 7220,
+      "return": 2.572896,
+      "failed": false
+    },
+    {
+      "t": 7220,
+      "return": 1.675466,
+      "failed": false
+    },
+    {
+      "t": 7296,
+      "return": 2.903256,
+      "failed": false
+    },
+    {
+      "t": 7296,
+      "return": 3.443594,
+      "failed": false
+    },
+    {
+      "t": 7316,
+      "return": 2.641215,
+      "failed": false
+    },
+    {
+      "t": 7316,
+      "return": 3.200499,
+      "failed": false
+    },
+    {
+      "t": 7392,
+      "return": 2.282533,
+      "failed": false
+    },
+    {
+      "t": 7392,
+      "return": 3.783105,
+      "failed": false
+    },
+    {
+      "t": 7412,
+      "return": 2.076682,
+      "failed": false
+    },
+    {
+      "t": 7412,
+      "return": 2.456768,
+      "failed": false
+    },
+    {
+      "t": 7488,
+      "return": 0.439085,
+      "failed": false
+    },
+    {
+      "t": 7488,
+      "return": 1.476982,
+      "failed": false
+    },
+    {
+      "t": 7508,
+      "return": 3.084099,
+      "failed": false
+    },
+    {
+      "t": 7508,
+      "return": 3.044491,
+      "failed": false
+    },
+    {
+      "t": 7584,
+      "return": -0.26973,
+      "failed": false
+    },
+    {
+      "t": 7584,
+      "return": 1.876241,
+      "failed": false
+    },
+    {
+      "t": 7604,
+      "return": -0.302522,
+      "failed": false
+    },
+    {
+      "t": 7604,
+      "return": 0.52164,
+      "failed": false
+    },
+    {
+      "t": 7680,
+      "return": 2.727957,
+      "failed": false
+    },
+    {
+      "t": 7680,
+      "return": 3.163716,
+      "failed": false
+    },
+    {
+      "t": 7700,
+      "return": 4.332321,
+      "failed": false
+    },
+    {
+      "t": 7700,
+      "return": 2.846294,
+      "failed": false
+    },
+    {
+      "t": 7776,
+      "return": 2.584082,
+      "failed": false
+    },
+    {
+      "t": 7776,
+      "return": 3.084234,
+      "failed": false
+    },
+    {
+      "t": 7796,
+      "return": 0.046797,
+      "failed": false
+    },
+    {
+      "t": 7796,
+      "return": 4.551058,
+      "failed": false
+    },
+    {
+      "t": 7872,
+      "return": 1.359687,
+      "failed": false
+    },
+    {
+      "t": 7872,
+      "return": 2.608029,
+      "failed": false
+    },
+    {
+      "t": 7892,
+      "return": 4.684102,
+      "failed": false
+    },
+    {
+      "t": 7892,
+      "return": 2.506849,
+      "failed": false
+    },
+    {
+      "t": 7968,
+      "return": 1.01395,
+      "failed": false
+    },
+    {
+      "t": 7968,
+      "return": 4.062616,
+      "failed": false
+    },
+    {
+      "t": 7988,
+      "return": 3.173649,
+      "failed": false
+    },
+    {
+      "t": 7988,
+      "return": 1.770692,
+      "failed": false
+    },
+    {
+      "t": 8064,
+      "return": 3.566409,
+      "failed": false
+    },
+    {
+      "t": 8064,
+      "return": 0.610082,
+      "failed": false
+    },
+    {
+      "t": 8084,
+      "return": 2.245322,
+      "failed": false
+    },
+    {
+      "t": 8084,
+      "return": 4.290363,
+      "failed": false
+    },
+    {
+      "t": 8160,
+      "return": 3.512283,
+      "failed": false
+    },
+    {
+      "t": 8160,
+      "return": 1.937538,
+      "failed": false
+    },
+    {
+      "t": 8180,
+      "return": 0.677696,
+      "failed": false
+    },
+    {
+      "t": 8180,
+      "return": 3.615241,
+      "failed": false
+    },
+    {
+      "t": 8256,
+      "return": 3.919612,
+      "failed": false
+    },
+    {
+      "t": 8256,
+      "return": 2.858906,
+      "failed": false
+    },
+    {
+      "t": 8276,
+      "return": 1.151317,
+      "failed": false
+    },
+    {
+      "t": 8276,
+      "return": 2.346924,
+      "failed": false
+    },
+    {
+      "t": 8352,
+      "return": 2.912526,
+      "failed": false
+    },
+    {
+      "t": 8352,
+      "return": 1.1039,
+      "failed": false
+    },
+    {
+      "t": 8372,
+      "return": -0.174859,
+      "failed": false
+    },
+    {
+      "t": 8372,
+      "return": 2.65907,
+      "failed": false
+    },
+    {
+      "t": 8448,
+      "return": 1.685886,
+      "failed": false
+    },
+    {
+      "t": 8448,
+      "return": 4.039514,
+      "failed": false
+    },
+    {
+      "t": 8468,
+      "return": 5.049734,
+      "failed": false
+    },
+    {
+      "t": 8468,
+      "return": 3.748405,
+      "failed": false
+    },
+    {
+      "t": 8544,
+      "return": 3.888727,
+      "failed": false
+    },
+    {
+      "t": 8544,
+      "return": 2.353662,
+      "failed": false
+    },
+    {
+      "t": 8564,
+      "return": 1.707385,
+      "failed": false
+    },
+    {
+      "t": 8564,
+      "return": 4.539461,
+      "failed": false
+    },
+    {
+      "t": 8640,
+      "return": 1.766502,
+      "failed": false
+    },
+    {
+      "t": 8640,
+      "return": 3.734827,
+      "failed": false
+    },
+    {
+      "t": 8660,
+      "return": 3.400431,
+      "failed": false
+    },
+    {
+      "t": 8660,
+      "return": 2.814242,
+      "failed": false
+    },
+    {
+      "t": 8736,
+      "return": 0.936212,
+      "failed": false
+    },
+    {
+      "t": 8736,
+      "return": 3.574904,
+      "failed": false
+    },
+    {
+      "t": 8756,
+      "return": 0.907384,
+      "failed": false
+    },
+    {
+      "t": 8756,
+      "return": 2.533178,
+      "failed": false
+    },
+    {
+      "t": 8832,
+      "return": 5.006251,
+      "failed": false
+    },
+    {
+      "t": 8832,
+      "return": 1.196441,
+      "failed": false
+    },
+    {
+      "t": 8852,
+      "return": 0.217894,
+      "failed": false
+    },
+    {
+      "t": 8852,
+      "return": 2.675745,
+      "failed": false
+    },
+    {
+      "t": 8928,
+      "return": 1.780326,
+      "failed": false
+    },
+    {
+      "t": 8928,
+      "return": 3.129297,
+      "failed": false
+    },
+    {
+      "t": 8948,
+      "return": 3.175734,
+      "failed": false
+    },
+    {
+      "t": 8948,
+      "return": 1.27523,
+      "failed": false
+    },
+    {
+      "t": 9024,
+      "return": 1.723964,
+      "failed": false
+    },
+    {
+      "t": 9024,
+      "return": 3.340667,
+      "failed": false
+    },
+    {
+      "t": 9044,
+      "return": 2.702443,
+      "failed": false
+    },
+    {
+      "t": 9044,
+      "return": 2.04907,
+      "failed": false
+    },
+    {
+      "t": 9120,
+      "return": 2.704525,
+      "failed": false
+    },
+    {
+      "t": 9120,
+      "return": 2.273804,
+      "failed": false
+    },
+    {
+      "t": 9140,
+      "return": 3.061262,
+      "failed": false
+    },
+    {
+      "t": 9140,
+      "return": 2.440933,
+      "failed": false
+    },
+    {
+      "t": 9216,
+      "return": 1.545074,
+      "failed": false
+    },
+    {
+      "t": 9216,
+      "return": 5.446393,
+      "failed": false
+    },
+    {
+      "t": 9236,
+      "return": 3.942677,
+      "failed": false
+    },
+    {
+      "t": 9236,
+      "return": 1.219047,
+      "failed": false
+    },
+    {
+      "t": 9312,
+      "return": 0.827418,
+      "failed": false
+    },
+    {
+      "t": 9312,
+      "return": 1.150425,
+      "failed": false
+    },
+    {
+      "t": 9332,
+      "return": 0.817426,
+      "failed": false
+    },
+    {
+      "t": 9332,
+      "return": -0.092359,
+      "failed": false
+    },
+    {
+      "t": 9408,
+      "return": 3.435948,
+      "failed": false
+    },
+    {
+      "t": 9408,
+      "return": 1.265845,
+      "failed": false
+    },
+    {
+      "t": 9428,
+      "return": 2.049098,
+      "failed": false
+    },
+    {
+      "t": 9428,
+      "return": 3.452895,
+      "failed": false
+    },
+    {
+      "t": 9504,
+      "return": 3.882338,
+      "failed": false
+    },
+    {
+      "t": 9504,
+      "return": 3.166821,
+      "failed": false
+    },
+    {
+      "t": 9524,
+      "return": -0.512284,
+      "failed": false
+    },
+    {
+      "t": 9524,
+      "return": 1.908297,
+      "failed": false
+    },
+    {
+      "t": 9600,
+      "return": 1.370856,
+      "failed": false
+    },
+    {
+      "t": 9600,
+      "return": 1.818941,
+      "failed": false
+    },
+    {
+      "t": 9620,
+      "return": 3.092227,
+      "failed": false
+    },
+    {
+      "t": 9620,
+      "return": 3.809796,
+      "failed": false
+    },
+    {
+      "t": 9696,
+      "return": 0.630408,
+      "failed": false
+    },
+    {
+      "t": 9696,
+      "return": 2.550167,
+      "failed": false
+    },
+    {
+      "t": 9716,
+      "return": 3.549963,
+      "failed": false
+    },
+    {
+      "t": 9716,
+      "return": 2.526597,
+      "failed": false
+    },
+    {
+      "t": 9792,
+      "return": 3.23196,
+      "failed": false
+    },
+    {
+      "t": 9792,
+      "return": 2.84412,
+      "failed": false
+    },
+    {
+      "t": 9812,
+      "return": 1.35174,
+      "failed": false
+    },
+    {
+      "t": 9812,
+      "return": 2.90683,
+      "failed": false
+    },
+    {
+      "t": 9888,
+      "return": 1.967564,
+      "failed": false
+    },
+    {
+      "t": 9888,
+      "return": 2.174975,
+      "failed": false
+    },
+    {
+      "t": 9908,
+      "return": 3.452422,
+      "failed": false
+    },
+    {
+      "t": 9908,
+      "return": 3.235171,
+      "failed": false
+    },
+    {
+      "t": 9984,
+      "return": 2.004956,
+      "failed": false
+    },
+    {
+      "t": 9984,
+      "return": 4.070051,
+      "failed": false
+    },
+    {
+      "t": 10004,
+      "return": 4.26136,
+      "failed": false
+    },
+    {
+      "t": 10004,
+      "return": 3.378634,
+      "failed": false
+    },
+    {
+      "t": 10080,
+      "return": 1.550874,
+      "failed": false
+    },
+    {
+      "t": 10080,
+      "return": 2.097888,
+      "failed": false
+    },
+    {
+      "t": 10100,
+      "return": 3.825865,
+      "failed": false
+    },
+    {
+      "t": 10100,
+      "return": 2.491214,
+      "failed": false
+    },
+    {
+      "t": 10176,
+      "return": 3.311448,
+      "failed": false
+    },
+    {
+      "t": 10176,
+      "return": 2.069185,
+      "failed": false
+    },
+    {
+      "t": 10196,
+      "return": 2.906362,
+      "failed": false
+    },
+    {
+      "t": 10196,
+      "return": 4.614567,
+      "failed": false
+    },
+    {
+      "t": 10272,
+      "return": 0.516582,
+      "failed": false
+    },
+    {
+      "t": 10272,
+      "return": 2.329623,
+      "failed": false
+    },
+    {
+      "t": 10292,
+      "return": 2.464399,
+      "failed": false
+    },
+    {
+      "t": 10292,
+      "return": 0.849263,
+      "failed": false
+    },
+    {
+      "t": 10368,
+      "return": 2.039829,
+      "failed": false
+    },
+    {
+      "t": 10368,
+      "return": 4.163825,
+      "failed": false
+    },
+    {
+      "t": 10388,
+      "return": 3.406125,
+      "failed": false
+    },
+    {
+      "t": 10388,
+      "return": 2.848632,
+      "failed": false
+    },
+    {
+      "t": 10464,
+      "return": 3.25923,
+      "failed": false
+    },
+    {
+      "t": 10464,
+      "return": 2.614432,
+      "failed": false
+    },
+    {
+      "t": 10484,
+      "return": 2.687789,
+      "failed": false
+    },
+    {
+      "t": 10484,
+      "return": 2.24146,
+      "failed": false
+    },
+    {
+      "t": 10560,
+      "return": 4.759531,
+      "failed": false
+    },
+    {
+      "t": 10560,
+      "return": 3.211814,
+      "failed": false
+    },
+    {
+      "t": 10580,
+      "return": 1.118137,
+      "failed": false
+    },
+    {
+      "t": 10580,
+      "return": 3.773725,
+      "failed": false
+    },
+    {
+      "t": 10656,
+      "return": 5.113207,
+      "failed": false
+    },
+    {
+      "t": 10656,
+      "return": 2.110043,
+      "failed": false
+    },
+    {
+      "t": 10676,
+      "return": 2.759999,
+      "failed": false
+    },
+    {
+      "t": 10676,
+      "return": 3.714044,
+      "failed": false
+    },
+    {
+      "t": 10752,
+      "return": 1.893095,
+      "failed": false
+    },
+    {
+      "t": 10752,
+      "return": 2.151149,
+      "failed": false
+    },
+    {
+      "t": 10772,
+      "return": 3.896493,
+      "failed": false
+    },
+    {
+      "t": 10772,
+      "return": 3.597256,
+      "failed": false
+    },
+    {
+      "t": 10848,
+      "return": 3.292702,
+      "failed": false
+    },
+    {
+      "t": 10848,
+      "return": 1.640393,
+      "failed": false
+    },
+    {
+      "t": 10868,
+      "return": -50.096132,
+      "failed": true,
+      "failure_reason": "RuFaS aborted the run and caught the error internally, so the simulation stopped early rather than completing its horizon. Recorded failures: ['TaskManager.task.Failed to finish task: 1/1 with output prefix: freestall', 'TaskManager._run_tasks.Task(s) failed']. Cause: ['NutrientRequestResults Error: ammonium_nitrogen_fraction must be between 0 and 1.']"
+    },
+    {
+      "t": 10868,
+      "return": 3.569067,
+      "failed": false
+    },
+    {
+      "t": 10868,
+      "return": 1.454049,
+      "failed": false
+    },
+    {
+      "t": 10944,
+      "return": 0.799183,
+      "failed": false
+    },
+    {
+      "t": 10964,
+      "return": 2.916428,
+      "failed": false
+    },
+    {
+      "t": 10964,
+      "return": 0.407123,
+      "failed": false
+    },
+    {
+      "t": 10964,
+      "return": 2.470144,
+      "failed": false
+    },
+    {
+      "t": 11040,
+      "return": 2.81654,
+      "failed": false
+    },
+    {
+      "t": 11060,
+      "return": -0.045901,
+      "failed": false
+    },
+    {
+      "t": 11060,
+      "return": 4.040855,
+      "failed": false
+    },
+    {
+      "t": 11060,
+      "return": 2.495964,
+      "failed": false
+    },
+    {
+      "t": 11136,
+      "return": 3.545151,
+      "failed": false
+    },
+    {
+      "t": 11156,
+      "return": 1.745716,
+      "failed": false
+    },
+    {
+      "t": 11156,
+      "return": 4.447619,
+      "failed": false
+    },
+    {
+      "t": 11156,
+      "return": 4.920723,
+      "failed": false
+    },
+    {
+      "t": 11232,
+      "return": 4.35052,
+      "failed": false
+    },
+    {
+      "t": 11252,
+      "return": 1.123406,
+      "failed": false
+    },
+    {
+      "t": 11252,
+      "return": 3.537281,
+      "failed": false
+    },
+    {
+      "t": 11252,
+      "return": 4.335767,
+      "failed": false
+    },
+    {
+      "t": 11328,
+      "return": 0.083115,
+      "failed": false
+    },
+    {
+      "t": 11348,
+      "return": 1.541637,
+      "failed": false
+    },
+    {
+      "t": 11348,
+      "return": 1.468085,
+      "failed": false
+    },
+    {
+      "t": 11348,
+      "return": 1.539919,
+      "failed": false
+    },
+    {
+      "t": 11424,
+      "return": 2.50527,
+      "failed": false
+    },
+    {
+      "t": 11444,
+      "return": 4.08588,
+      "failed": false
+    },
+    {
+      "t": 11444,
+      "return": 2.565055,
+      "failed": false
+    },
+    {
+      "t": 11444,
+      "return": 4.341981,
+      "failed": false
+    },
+    {
+      "t": 11520,
+      "return": 4.771626,
+      "failed": false
+    },
+    {
+      "t": 11540,
+      "return": 4.30619,
+      "failed": false
+    },
+    {
+      "t": 11540,
+      "return": 4.835916,
+      "failed": false
+    },
+    {
+      "t": 11540,
+      "return": 1.772365,
+      "failed": false
+    },
+    {
+      "t": 11616,
+      "return": 2.155422,
+      "failed": false
+    },
+    {
+      "t": 11636,
+      "return": 3.552317,
+      "failed": false
+    },
+    {
+      "t": 11636,
+      "return": 3.745164,
+      "failed": false
+    },
+    {
+      "t": 11636,
+      "return": 4.423523,
+      "failed": false
+    },
+    {
+      "t": 11712,
+      "return": 1.001607,
+      "failed": false
+    },
+    {
+      "t": 11732,
+      "return": 2.225997,
+      "failed": false
+    },
+    {
+      "t": 11732,
+      "return": 2.532633,
+      "failed": false
+    },
+    {
+      "t": 11732,
+      "return": 2.212678,
+      "failed": false
+    },
+    {
+      "t": 11808,
+      "return": 0.974883,
+      "failed": false
+    },
+    {
+      "t": 11828,
+      "return": 2.82857,
+      "failed": false
+    },
+    {
+      "t": 11828,
+      "return": -0.225253,
+      "failed": false
+    },
+    {
+      "t": 11828,
+      "return": 3.310488,
+      "failed": false
+    },
+    {
+      "t": 11904,
+      "return": 1.214439,
+      "failed": false
+    },
+    {
+      "t": 11924,
+      "return": 4.033017,
+      "failed": false
+    },
+    {
+      "t": 11924,
+      "return": 2.17344,
+      "failed": false
+    },
+    {
+      "t": 11924,
+      "return": 2.721736,
+      "failed": false
+    },
+    {
+      "t": 12000,
+      "return": 2.303404,
+      "failed": false
+    },
+    {
+      "t": 12020,
+      "return": 2.731694,
+      "failed": false
+    },
+    {
+      "t": 12020,
+      "return": 2.774741,
+      "failed": false
+    },
+    {
+      "t": 12020,
+      "return": -0.067656,
+      "failed": false
+    },
+    {
+      "t": 12096,
+      "return": 1.628433,
+      "failed": false
+    },
+    {
+      "t": 12116,
+      "return": 1.816889,
+      "failed": false
+    },
+    {
+      "t": 12116,
+      "return": 2.045964,
+      "failed": false
+    },
+    {
+      "t": 12116,
+      "return": 2.694849,
+      "failed": false
+    },
+    {
+      "t": 12192,
+      "return": 1.775577,
+      "failed": false
+    },
+    {
+      "t": 12212,
+      "return": 5.333453,
+      "failed": false
+    },
+    {
+      "t": 12212,
+      "return": 1.983349,
+      "failed": false
+    },
+    {
+      "t": 12212,
+      "return": 3.035119,
+      "failed": false
+    },
+    {
+      "t": 12288,
+      "return": 2.678064,
+      "failed": false
+    },
+    {
+      "t": 12308,
+      "return": 4.022627,
+      "failed": false
+    },
+    {
+      "t": 12308,
+      "return": 2.868102,
+      "failed": false
+    },
+    {
+      "t": 12308,
+      "return": 3.214986,
+      "failed": false
+    },
+    {
+      "t": 12384,
+      "return": 1.78597,
+      "failed": false
+    },
+    {
+      "t": 12404,
+      "return": 5.956818,
+      "failed": false
+    },
+    {
+      "t": 12404,
+      "return": 3.68933,
+      "failed": false
+    },
+    {
+      "t": 12404,
+      "return": 2.200459,
+      "failed": false
+    },
+    {
+      "t": 12480,
+      "return": 2.271706,
+      "failed": false
+    },
+    {
+      "t": 12500,
+      "return": 3.422277,
+      "failed": false
+    },
+    {
+      "t": 12500,
+      "return": 2.548764,
+      "failed": false
+    },
+    {
+      "t": 12500,
+      "return": 3.824819,
+      "failed": false
+    },
+    {
+      "t": 12576,
+      "return": 4.460777,
+      "failed": false
+    },
+    {
+      "t": 12596,
+      "return": 0.727136,
+      "failed": false
+    },
+    {
+      "t": 12596,
+      "return": -0.696115,
+      "failed": false
+    },
+    {
+      "t": 12596,
+      "return": 3.676075,
+      "failed": false
+    },
+    {
+      "t": 12672,
+      "return": 3.424926,
+      "failed": false
+    },
+    {
+      "t": 12692,
+      "return": 3.906606,
+      "failed": false
+    },
+    {
+      "t": 12692,
+      "return": 3.072113,
+      "failed": false
+    },
+    {
+      "t": 12692,
+      "return": 1.381592,
+      "failed": false
+    },
+    {
+      "t": 12768,
+      "return": 3.696773,
+      "failed": false
+    },
+    {
+      "t": 12788,
+      "return": 4.083217,
+      "failed": false
+    },
+    {
+      "t": 12788,
+      "return": 1.959207,
+      "failed": false
+    },
+    {
+      "t": 12788,
+      "return": 3.19502,
+      "failed": false
+    },
+    {
+      "t": 12864,
+      "return": 3.150532,
+      "failed": false
+    },
+    {
+      "t": 12884,
+      "return": 1.928232,
+      "failed": false
+    },
+    {
+      "t": 12884,
+      "return": 2.927516,
+      "failed": false
+    },
+    {
+      "t": 12884,
+      "return": 1.195457,
+      "failed": false
+    },
+    {
+      "t": 12960,
+      "return": 4.73688,
+      "failed": false
+    },
+    {
+      "t": 12980,
+      "return": 1.245163,
+      "failed": false
+    },
+    {
+      "t": 12980,
+      "return": 4.445153,
+      "failed": false
+    },
+    {
+      "t": 12980,
+      "return": 3.381071,
+      "failed": false
+    },
+    {
+      "t": 13056,
+      "return": 4.094113,
+      "failed": false
+    },
+    {
+      "t": 13076,
+      "return": 1.189213,
+      "failed": false
+    },
+    {
+      "t": 13076,
+      "return": 5.949271,
+      "failed": false
+    },
+    {
+      "t": 13076,
+      "return": 3.701181,
+      "failed": false
+    },
+    {
+      "t": 13152,
+      "return": 1.176527,
+      "failed": false
+    },
+    {
+      "t": 13172,
+      "return": 3.253267,
+      "failed": false
+    },
+    {
+      "t": 13172,
+      "return": 0.793166,
+      "failed": false
+    },
+    {
+      "t": 13172,
+      "return": 4.986696,
+      "failed": false
+    },
+    {
+      "t": 13248,
+      "return": 0.975978,
+      "failed": false
+    },
+    {
+      "t": 13268,
+      "return": 4.134695,
+      "failed": false
+    },
+    {
+      "t": 13268,
+      "return": 2.878134,
+      "failed": false
+    },
+    {
+      "t": 13268,
+      "return": 2.027867,
+      "failed": false
+    },
+    {
+      "t": 13344,
+      "return": 1.960901,
+      "failed": false
+    },
+    {
+      "t": 13364,
+      "return": 2.721196,
+      "failed": false
+    },
+    {
+      "t": 13364,
+      "return": 3.398458,
+      "failed": false
+    },
+    {
+      "t": 13364,
+      "return": 2.647841,
+      "failed": false
+    },
+    {
+      "t": 13440,
+      "return": 2.358709,
+      "failed": false
+    },
+    {
+      "t": 13460,
+      "return": 3.117485,
+      "failed": false
+    },
+    {
+      "t": 13460,
+      "return": 3.233558,
+      "failed": false
+    },
+    {
+      "t": 13460,
+      "return": 3.515763,
+      "failed": false
+    },
+    {
+      "t": 13536,
+      "return": 2.358112,
+      "failed": false
+    },
+    {
+      "t": 13556,
+      "return": 7.20237,
+      "failed": false
+    },
+    {
+      "t": 13556,
+      "return": 3.597627,
+      "failed": false
+    },
+    {
+      "t": 13556,
+      "return": 2.278427,
+      "failed": false
+    },
+    {
+      "t": 13632,
+      "return": 3.101665,
+      "failed": false
+    },
+    {
+      "t": 13652,
+      "return": 1.533904,
+      "failed": false
+    },
+    {
+      "t": 13652,
+      "return": 4.406529,
+      "failed": false
+    },
+    {
+      "t": 13652,
+      "return": 1.637666,
+      "failed": false
+    },
+    {
+      "t": 13728,
+      "return": 4.905265,
+      "failed": false
+    },
+    {
+      "t": 13748,
+      "return": 3.820691,
+      "failed": false
+    },
+    {
+      "t": 13748,
+      "return": 2.243682,
+      "failed": false
+    },
+    {
+      "t": 13748,
+      "return": 5.162576,
+      "failed": false
+    },
+    {
+      "t": 13824,
+      "return": 2.872984,
+      "failed": false
+    },
+    {
+      "t": 13844,
+      "return": 1.270934,
+      "failed": false
+    },
+    {
+      "t": 13844,
+      "return": 1.018675,
+      "failed": false
+    },
+    {
+      "t": 13844,
+      "return": 2.73906,
+      "failed": false
+    },
+    {
+      "t": 13920,
+      "return": 2.200068,
+      "failed": false
+    },
+    {
+      "t": 13940,
+      "return": 2.540496,
+      "failed": false
+    },
+    {
+      "t": 13940,
+      "return": 3.067103,
+      "failed": false
+    },
+    {
+      "t": 13940,
+      "return": 2.45729,
+      "failed": false
+    },
+    {
+      "t": 14016,
+      "return": 1.240449,
+      "failed": false
+    },
+    {
+      "t": 14036,
+      "return": 1.29255,
+      "failed": false
+    },
+    {
+      "t": 14036,
+      "return": 1.386068,
+      "failed": false
+    },
+    {
+      "t": 14036,
+      "return": 3.270059,
+      "failed": false
+    },
+    {
+      "t": 14112,
+      "return": 4.318113,
+      "failed": false
+    },
+    {
+      "t": 14132,
+      "return": 1.83013,
+      "failed": false
+    },
+    {
+      "t": 14132,
+      "return": 2.121878,
+      "failed": false
+    },
+    {
+      "t": 14132,
+      "return": 2.842248,
+      "failed": false
+    },
+    {
+      "t": 14208,
+      "return": 2.472681,
+      "failed": false
+    },
+    {
+      "t": 14228,
+      "return": 4.537204,
+      "failed": false
+    },
+    {
+      "t": 14228,
+      "return": 2.814843,
+      "failed": false
+    },
+    {
+      "t": 14228,
+      "return": 6.647877,
+      "failed": false
+    },
+    {
+      "t": 14304,
+      "return": 3.869208,
+      "failed": false
+    },
+    {
+      "t": 14324,
+      "return": 1.449937,
+      "failed": false
+    },
+    {
+      "t": 14324,
+      "return": 4.049614,
+      "failed": false
+    },
+    {
+      "t": 14324,
+      "return": 4.659411,
+      "failed": false
+    },
+    {
+      "t": 14400,
+      "return": 4.945135,
+      "failed": false
+    },
+    {
+      "t": 14420,
+      "return": 4.493095,
+      "failed": false
+    },
+    {
+      "t": 14420,
+      "return": 1.313316,
+      "failed": false
+    },
+    {
+      "t": 14420,
+      "return": 2.178338,
+      "failed": false
+    },
+    {
+      "t": 14496,
+      "return": 2.261904,
+      "failed": false
+    },
+    {
+      "t": 14516,
+      "return": 3.060478,
+      "failed": false
+    },
+    {
+      "t": 14516,
+      "return": 2.094474,
+      "failed": false
+    },
+    {
+      "t": 14516,
+      "return": 2.029351,
+      "failed": false
+    },
+    {
+      "t": 14592,
+      "return": 2.78856,
+      "failed": false
+    },
+    {
+      "t": 14612,
+      "return": 4.002722,
+      "failed": false
+    },
+    {
+      "t": 14612,
+      "return": 3.681088,
+      "failed": false
+    },
+    {
+      "t": 14612,
+      "return": 5.026576,
+      "failed": false
+    },
+    {
+      "t": 14688,
+      "return": 3.001613,
+      "failed": false
+    },
+    {
+      "t": 14708,
+      "return": 1.688221,
+      "failed": false
+    },
+    {
+      "t": 14708,
+      "return": 0.896557,
+      "failed": false
+    },
+    {
+      "t": 14708,
+      "return": 2.845053,
+      "failed": false
+    },
+    {
+      "t": 14784,
+      "return": 2.895459,
+      "failed": false
+    },
+    {
+      "t": 14804,
+      "return": 5.646103,
+      "failed": false
+    },
+    {
+      "t": 14804,
+      "return": 4.512825,
+      "failed": false
+    },
+    {
+      "t": 14804,
+      "return": 2.99777,
+      "failed": false
+    },
+    {
+      "t": 14880,
+      "return": 2.057476,
+      "failed": false
+    },
+    {
+      "t": 14900,
+      "return": 2.989325,
+      "failed": false
+    },
+    {
+      "t": 14900,
+      "return": 4.352225,
+      "failed": false
+    },
+    {
+      "t": 14900,
+      "return": 3.271705,
+      "failed": false
+    },
+    {
+      "t": 14976,
+      "return": 1.5019,
+      "failed": false
+    },
+    {
+      "t": 14996,
+      "return": 2.367741,
+      "failed": false
+    },
+    {
+      "t": 14996,
+      "return": 1.491713,
+      "failed": false
+    },
+    {
+      "t": 14996,
+      "return": 5.999816,
+      "failed": false
+    },
+    {
+      "t": 15072,
+      "return": 2.411649,
+      "failed": false
+    },
+    {
+      "t": 15092,
+      "return": -0.54945,
+      "failed": false
+    },
+    {
+      "t": 15092,
+      "return": 2.056065,
+      "failed": false
+    },
+    {
+      "t": 15092,
+      "return": 3.021873,
+      "failed": false
+    },
+    {
+      "t": 15168,
+      "return": 3.868909,
+      "failed": false
+    },
+    {
+      "t": 15188,
+      "return": 3.835158,
+      "failed": false
+    },
+    {
+      "t": 15188,
+      "return": 1.931123,
+      "failed": false
+    },
+    {
+      "t": 15188,
+      "return": 3.383428,
+      "failed": false
+    },
+    {
+      "t": 15264,
+      "return": 1.961088,
+      "failed": false
+    },
+    {
+      "t": 15284,
+      "return": 3.058221,
+      "failed": false
+    },
+    {
+      "t": 15284,
+      "return": 4.355829,
+      "failed": false
+    },
+    {
+      "t": 15284,
+      "return": 2.659572,
+      "failed": false
+    },
+    {
+      "t": 15360,
+      "return": 6.060939,
+      "failed": false
+    },
+    {
+      "t": 15380,
+      "return": 2.302772,
+      "failed": false
+    },
+    {
+      "t": 15380,
+      "return": 3.533168,
+      "failed": false
+    },
+    {
+      "t": 15380,
+      "return": 4.098014,
+      "failed": false
+    },
+    {
+      "t": 15456,
+      "return": 2.670877,
+      "failed": false
+    },
+    {
+      "t": 15476,
+      "return": 3.883208,
+      "failed": false
+    },
+    {
+      "t": 15476,
+      "return": 0.403334,
+      "failed": false
+    },
+    {
+      "t": 15476,
+      "return": 6.838388,
+      "failed": false
+    },
+    {
+      "t": 15552,
+      "return": 6.156161,
+      "failed": false
+    },
+    {
+      "t": 15572,
+      "return": 3.768329,
+      "failed": false
+    },
+    {
+      "t": 15572,
+      "return": 3.976019,
+      "failed": false
+    },
+    {
+      "t": 15572,
+      "return": 4.037642,
+      "failed": false
+    },
+    {
+      "t": 15648,
+      "return": 4.987997,
+      "failed": false
+    },
+    {
+      "t": 15668,
+      "return": 4.134446,
+      "failed": false
+    },
+    {
+      "t": 15668,
+      "return": -0.033514,
+      "failed": false
+    },
+    {
+      "t": 15668,
+      "return": 1.709746,
+      "failed": false
+    },
+    {
+      "t": 15744,
+      "return": 3.148948,
+      "failed": false
+    },
+    {
+      "t": 15764,
+      "return": 3.141262,
+      "failed": false
+    },
+    {
+      "t": 15764,
+      "return": 2.907414,
+      "failed": false
+    },
+    {
+      "t": 15764,
+      "return": 1.95941,
+      "failed": false
+    },
+    {
+      "t": 15840,
+      "return": 2.411472,
+      "failed": false
+    },
+    {
+      "t": 15860,
+      "return": 3.989694,
+      "failed": false
+    },
+    {
+      "t": 15860,
+      "return": 2.676406,
+      "failed": false
+    },
+    {
+      "t": 15860,
+      "return": 3.630474,
+      "failed": false
+    },
+    {
+      "t": 15936,
+      "return": 3.649397,
+      "failed": false
+    },
+    {
+      "t": 15956,
+      "return": 0.52533,
+      "failed": false
+    },
+    {
+      "t": 15956,
+      "return": 4.02448,
+      "failed": false
+    },
+    {
+      "t": 15956,
+      "return": 1.374219,
+      "failed": false
+    },
+    {
+      "t": 16032,
+      "return": 2.181903,
+      "failed": false
+    },
+    {
+      "t": 16052,
+      "return": 3.15567,
+      "failed": false
+    },
+    {
+      "t": 16052,
+      "return": 4.166423,
+      "failed": false
+    },
+    {
+      "t": 16052,
+      "return": 2.893699,
+      "failed": false
+    },
+    {
+      "t": 16128,
+      "return": 5.680899,
+      "failed": false
+    },
+    {
+      "t": 16148,
+      "return": 2.3552,
+      "failed": false
+    },
+    {
+      "t": 16148,
+      "return": 5.052092,
+      "failed": false
+    },
+    {
+      "t": 16148,
+      "return": 4.802464,
+      "failed": false
+    },
+    {
+      "t": 16224,
+      "return": 3.676069,
+      "failed": false
+    },
+    {
+      "t": 16244,
+      "return": 4.770466,
+      "failed": false
+    },
+    {
+      "t": 16244,
+      "return": 4.078986,
+      "failed": false
+    },
+    {
+      "t": 16244,
+      "return": 4.021393,
+      "failed": false
+    },
+    {
+      "t": 16320,
+      "return": 2.285261,
+      "failed": false
+    },
+    {
+      "t": 16340,
+      "return": 1.959417,
+      "failed": false
+    },
+    {
+      "t": 16340,
+      "return": 2.729693,
+      "failed": false
+    },
+    {
+      "t": 16340,
+      "return": 4.626867,
+      "failed": false
+    },
+    {
+      "t": 16416,
+      "return": 3.328765,
+      "failed": false
+    },
+    {
+      "t": 16436,
+      "return": 1.350408,
+      "failed": false
+    },
+    {
+      "t": 16436,
+      "return": 2.526701,
+      "failed": false
+    },
+    {
+      "t": 16436,
+      "return": 5.054674,
+      "failed": false
+    },
+    {
+      "t": 16512,
+      "return": 2.001364,
+      "failed": false
+    },
+    {
+      "t": 16532,
+      "return": 4.678859,
+      "failed": false
+    },
+    {
+      "t": 16532,
+      "return": 3.515615,
+      "failed": false
+    },
+    {
+      "t": 16532,
+      "return": 5.86273,
+      "failed": false
+    },
+    {
+      "t": 16608,
+      "return": 3.231208,
+      "failed": false
+    },
+    {
+      "t": 16628,
+      "return": 3.829719,
+      "failed": false
+    },
+    {
+      "t": 16628,
+      "return": 1.493039,
+      "failed": false
+    },
+    {
+      "t": 16628,
+      "return": 5.415141,
+      "failed": false
+    },
+    {
+      "t": 16704,
+      "return": 1.57649,
+      "failed": false
+    },
+    {
+      "t": 16724,
+      "return": 5.159576,
+      "failed": false
+    },
+    {
+      "t": 16724,
+      "return": 4.834512,
+      "failed": false
+    },
+    {
+      "t": 16724,
+      "return": 4.079331,
+      "failed": false
+    },
+    {
+      "t": 16800,
+      "return": 4.386612,
+      "failed": false
+    },
+    {
+      "t": 16820,
+      "return": 2.308059,
+      "failed": false
+    },
+    {
+      "t": 16820,
+      "return": 3.797692,
+      "failed": false
+    },
+    {
+      "t": 16820,
+      "return": 1.107771,
+      "failed": false
+    },
+    {
+      "t": 16896,
+      "return": 3.518607,
+      "failed": false
+    },
+    {
+      "t": 16916,
+      "return": 4.056683,
+      "failed": false
+    },
+    {
+      "t": 16916,
+      "return": 3.800656,
+      "failed": false
+    },
+    {
+      "t": 16916,
+      "return": 3.641069,
+      "failed": false
+    },
+    {
+      "t": 16992,
+      "return": 1.859378,
+      "failed": false
+    },
+    {
+      "t": 17012,
+      "return": 3.847465,
+      "failed": false
+    },
+    {
+      "t": 17012,
+      "return": 4.666462,
+      "failed": false
+    },
+    {
+      "t": 17012,
+      "return": 3.489135,
+      "failed": false
+    },
+    {
+      "t": 17088,
+      "return": 4.327219,
+      "failed": false
+    },
+    {
+      "t": 17108,
+      "return": 4.091865,
+      "failed": false
+    },
+    {
+      "t": 17108,
+      "return": 3.989259,
+      "failed": false
+    },
+    {
+      "t": 17108,
+      "return": 0.982513,
+      "failed": false
+    },
+    {
+      "t": 17184,
+      "return": 2.83522,
+      "failed": false
+    },
+    {
+      "t": 17204,
+      "return": 1.293828,
+      "failed": false
+    },
+    {
+      "t": 17204,
+      "return": 4.346607,
+      "failed": false
+    },
+    {
+      "t": 17204,
+      "return": 4.499711,
+      "failed": false
+    },
+    {
+      "t": 17280,
+      "return": 4.453278,
+      "failed": false
+    },
+    {
+      "t": 17300,
+      "return": 5.582634,
+      "failed": false
+    },
+    {
+      "t": 17300,
+      "return": 2.431785,
+      "failed": false
+    },
+    {
+      "t": 17300,
+      "return": 4.557723,
+      "failed": false
+    },
+    {
+      "t": 17376,
+      "return": 3.214657,
+      "failed": false
+    },
+    {
+      "t": 17396,
+      "return": 2.823454,
+      "failed": false
+    },
+    {
+      "t": 17396,
+      "return": 3.14456,
+      "failed": false
+    },
+    {
+      "t": 17396,
+      "return": 2.904411,
+      "failed": false
+    },
+    {
+      "t": 17472,
+      "return": 3.872326,
+      "failed": false
+    },
+    {
+      "t": 17492,
+      "return": 4.658717,
+      "failed": false
+    },
+    {
+      "t": 17492,
+      "return": 4.826493,
+      "failed": false
+    },
+    {
+      "t": 17492,
+      "return": 2.034171,
+      "failed": false
+    },
+    {
+      "t": 17568,
+      "return": 2.30088,
+      "failed": false
+    },
+    {
+      "t": 17588,
+      "return": 4.58408,
+      "failed": false
+    },
+    {
+      "t": 17588,
+      "return": 3.146969,
+      "failed": false
+    },
+    {
+      "t": 17588,
+      "return": 4.129017,
+      "failed": false
+    },
+    {
+      "t": 17664,
+      "return": 2.660725,
+      "failed": false
+    },
+    {
+      "t": 17684,
+      "return": 4.835831,
+      "failed": false
+    },
+    {
+      "t": 17684,
+      "return": 3.500461,
+      "failed": false
+    },
+    {
+      "t": 17684,
+      "return": 2.676188,
+      "failed": false
+    },
+    {
+      "t": 17760,
+      "return": 2.85308,
+      "failed": false
+    },
+    {
+      "t": 17780,
+      "return": 3.482882,
+      "failed": false
+    },
+    {
+      "t": 17780,
+      "return": 5.169447,
+      "failed": false
+    },
+    {
+      "t": 17780,
+      "return": 5.427373,
+      "failed": false
+    },
+    {
+      "t": 17856,
+      "return": 2.298741,
+      "failed": false
+    },
+    {
+      "t": 17876,
+      "return": 4.634335,
+      "failed": false
+    },
+    {
+      "t": 17876,
+      "return": 2.472146,
+      "failed": false
+    },
+    {
+      "t": 17876,
+      "return": 3.452025,
+      "failed": false
+    },
+    {
+      "t": 17952,
+      "return": 4.211725,
+      "failed": false
+    },
+    {
+      "t": 17972,
+      "return": 4.941446,
+      "failed": false
+    },
+    {
+      "t": 17972,
+      "return": 3.823994,
+      "failed": false
+    },
+    {
+      "t": 17972,
+      "return": 1.239579,
+      "failed": false
+    },
+    {
+      "t": 18048,
+      "return": 5.189718,
+      "failed": false
+    },
+    {
+      "t": 18068,
+      "return": 4.541908,
+      "failed": false
+    },
+    {
+      "t": 18068,
+      "return": 4.797963,
+      "failed": false
+    },
+    {
+      "t": 18068,
+      "return": 0.895037,
+      "failed": false
+    },
+    {
+      "t": 18144,
+      "return": 1.238231,
+      "failed": false
+    },
+    {
+      "t": 18164,
+      "return": 4.870359,
+      "failed": false
+    },
+    {
+      "t": 18164,
+      "return": 1.722517,
+      "failed": false
+    },
+    {
+      "t": 18164,
+      "return": 2.290481,
+      "failed": false
+    },
+    {
+      "t": 18240,
+      "return": 1.805781,
+      "failed": false
+    },
+    {
+      "t": 18260,
+      "return": 2.753408,
+      "failed": false
+    },
+    {
+      "t": 18260,
+      "return": 2.212329,
+      "failed": false
+    },
+    {
+      "t": 18260,
+      "return": 5.026138,
+      "failed": false
+    },
+    {
+      "t": 18336,
+      "return": 2.902384,
+      "failed": false
+    },
+    {
+      "t": 18356,
+      "return": 3.690636,
+      "failed": false
+    },
+    {
+      "t": 18356,
+      "return": 5.099113,
+      "failed": false
+    },
+    {
+      "t": 18356,
+      "return": 2.364412,
+      "failed": false
+    },
+    {
+      "t": 18432,
+      "return": 4.147701,
+      "failed": false
+    },
+    {
+      "t": 18452,
+      "return": 2.180246,
+      "failed": false
+    },
+    {
+      "t": 18452,
+      "return": 3.367293,
+      "failed": false
+    },
+    {
+      "t": 18452,
+      "return": 4.715889,
+      "failed": false
+    },
+    {
+      "t": 18528,
+      "return": 6.064365,
+      "failed": false
+    },
+    {
+      "t": 18548,
+      "return": 4.85806,
+      "failed": false
+    },
+    {
+      "t": 18548,
+      "return": 5.259365,
+      "failed": false
+    },
+    {
+      "t": 18548,
+      "return": 4.908217,
+      "failed": false
+    },
+    {
+      "t": 18624,
+      "return": 5.343225,
+      "failed": false
+    },
+    {
+      "t": 18644,
+      "return": 3.676206,
+      "failed": false
+    },
+    {
+      "t": 18644,
+      "return": 4.218246,
+      "failed": false
+    },
+    {
+      "t": 18644,
+      "return": 3.412413,
+      "failed": false
+    },
+    {
+      "t": 18720,
+      "return": 5.151157,
+      "failed": false
+    },
+    {
+      "t": 18740,
+      "return": 3.476927,
+      "failed": false
+    },
+    {
+      "t": 18740,
+      "return": 6.572677,
+      "failed": false
+    },
+    {
+      "t": 18740,
+      "return": 2.689327,
+      "failed": false
+    },
+    {
+      "t": 18816,
+      "return": 4.046602,
+      "failed": false
+    },
+    {
+      "t": 18836,
+      "return": 3.124965,
+      "failed": false
+    },
+    {
+      "t": 18836,
+      "return": 1.981532,
+      "failed": false
+    },
+    {
+      "t": 18836,
+      "return": 5.216079,
+      "failed": false
+    },
+    {
+      "t": 18912,
+      "return": 4.462433,
+      "failed": false
+    },
+    {
+      "t": 18932,
+      "return": 5.555225,
+      "failed": false
+    },
+    {
+      "t": 18932,
+      "return": 5.458941,
+      "failed": false
+    },
+    {
+      "t": 18932,
+      "return": 4.341905,
+      "failed": false
+    },
+    {
+      "t": 19008,
+      "return": 4.240703,
+      "failed": false
+    },
+    {
+      "t": 19028,
+      "return": 1.81707,
+      "failed": false
+    },
+    {
+      "t": 19028,
+      "return": 4.814748,
+      "failed": false
+    },
+    {
+      "t": 19028,
+      "return": 2.582982,
+      "failed": false
+    },
+    {
+      "t": 19104,
+      "return": 3.886891,
+      "failed": false
+    },
+    {
+      "t": 19124,
+      "return": 3.391621,
+      "failed": false
+    },
+    {
+      "t": 19124,
+      "return": 4.529982,
+      "failed": false
+    },
+    {
+      "t": 19124,
+      "return": 2.381812,
+      "failed": false
+    },
+    {
+      "t": 19200,
+      "return": 4.141157,
+      "failed": false
+    },
+    {
+      "t": 19220,
+      "return": 2.65701,
+      "failed": false
+    },
+    {
+      "t": 19220,
+      "return": 2.443016,
+      "failed": false
+    },
+    {
+      "t": 19220,
+      "return": 3.711479,
+      "failed": false
+    },
+    {
+      "t": 19296,
+      "return": 4.76928,
+      "failed": false
+    },
+    {
+      "t": 19316,
+      "return": 6.200718,
+      "failed": false
+    },
+    {
+      "t": 19316,
+      "return": 4.085083,
+      "failed": false
+    },
+    {
+      "t": 19316,
+      "return": 3.279339,
+      "failed": false
+    },
+    {
+      "t": 19392,
+      "return": 4.087235,
+      "failed": false
+    },
+    {
+      "t": 19412,
+      "return": 4.909903,
+      "failed": false
+    },
+    {
+      "t": 19412,
+      "return": 3.983954,
+      "failed": false
+    },
+    {
+      "t": 19412,
+      "return": 4.016808,
+      "failed": false
+    },
+    {
+      "t": 19488,
+      "return": 1.971959,
+      "failed": false
+    },
+    {
+      "t": 19508,
+      "return": 3.236139,
+      "failed": false
+    },
+    {
+      "t": 19508,
+      "return": 3.54494,
+      "failed": false
+    },
+    {
+      "t": 19508,
+      "return": 1.797025,
+      "failed": false
+    },
+    {
+      "t": 19584,
+      "return": 4.653908,
+      "failed": false
+    },
+    {
+      "t": 19604,
+      "return": 4.422485,
+      "failed": false
+    },
+    {
+      "t": 19604,
+      "return": 3.181001,
+      "failed": false
+    },
+    {
+      "t": 19604,
+      "return": 4.127601,
+      "failed": false
+    },
+    {
+      "t": 19680,
+      "return": 4.970673,
+      "failed": false
+    },
+    {
+      "t": 19700,
+      "return": 5.021645,
+      "failed": false
+    },
+    {
+      "t": 19700,
+      "return": 3.932366,
+      "failed": false
+    },
+    {
+      "t": 19700,
+      "return": 3.86481,
+      "failed": false
+    },
+    {
+      "t": 19776,
+      "return": 4.34903,
+      "failed": false
+    },
+    {
+      "t": 19796,
+      "return": 1.64987,
+      "failed": false
+    },
+    {
+      "t": 19796,
+      "return": 3.249241,
+      "failed": false
+    },
+    {
+      "t": 19796,
+      "return": 3.99279,
+      "failed": false
+    },
+    {
+      "t": 19872,
+      "return": 2.5499,
+      "failed": false
+    },
+    {
+      "t": 19892,
+      "return": 4.797414,
+      "failed": false
+    },
+    {
+      "t": 19892,
+      "return": 3.660793,
+      "failed": false
+    },
+    {
+      "t": 19892,
+      "return": 1.906112,
+      "failed": false
+    },
+    {
+      "t": 19968,
+      "return": 3.710118,
+      "failed": false
+    },
+    {
+      "t": 19988,
+      "return": 4.189902,
+      "failed": false
+    },
+    {
+      "t": 19988,
+      "return": 1.020465,
+      "failed": false
+    },
+    {
+      "t": 19988,
+      "return": 3.969496,
+      "failed": false
+    },
+    {
+      "t": 20064,
+      "return": 4.105477,
+      "failed": false
+    },
+    {
+      "t": 20084,
+      "return": 4.333031,
+      "failed": false
+    },
+    {
+      "t": 20084,
+      "return": 5.080891,
+      "failed": false
+    },
+    {
+      "t": 20084,
+      "return": 2.5109,
+      "failed": false
+    },
+    {
+      "t": 20160,
+      "return": 4.867309,
+      "failed": false
+    },
+    {
+      "t": 20180,
+      "return": 3.900959,
+      "failed": false
+    },
+    {
+      "t": 20180,
+      "return": 4.499382,
+      "failed": false
+    },
+    {
+      "t": 20180,
+      "return": 3.453138,
+      "failed": false
+    },
+    {
+      "t": 20256,
+      "return": 2.293612,
+      "failed": false
+    },
+    {
+      "t": 20276,
+      "return": 6.11374,
+      "failed": false
+    },
+    {
+      "t": 20276,
+      "return": 6.739216,
+      "failed": false
+    },
+    {
+      "t": 20276,
+      "return": 4.047531,
+      "failed": false
+    },
+    {
+      "t": 20352,
+      "return": 5.077177,
+      "failed": false
+    },
+    {
+      "t": 20372,
+      "return": 3.297899,
+      "failed": false
+    },
+    {
+      "t": 20372,
+      "return": 5.199432,
+      "failed": false
+    },
+    {
+      "t": 20372,
+      "return": 6.201689,
+      "failed": false
+    },
+    {
+      "t": 20448,
+      "return": 2.646968,
+      "failed": false
+    },
+    {
+      "t": 20468,
+      "return": 5.272058,
+      "failed": false
+    },
+    {
+      "t": 20468,
+      "return": 2.146318,
+      "failed": false
+    },
+    {
+      "t": 20468,
+      "return": 3.360659,
+      "failed": false
+    },
+    {
+      "t": 20544,
+      "return": 5.112879,
+      "failed": false
+    },
+    {
+      "t": 20564,
+      "return": 3.630563,
+      "failed": false
+    },
+    {
+      "t": 20564,
+      "return": 5.035599,
+      "failed": false
+    },
+    {
+      "t": 20564,
+      "return": 1.84163,
+      "failed": false
+    },
+    {
+      "t": 20640,
+      "return": 1.88702,
+      "failed": false
+    },
+    {
+      "t": 20660,
+      "return": 4.731827,
+      "failed": false
+    },
+    {
+      "t": 20660,
+      "return": 3.455256,
+      "failed": false
+    },
+    {
+      "t": 20660,
+      "return": 4.081379,
+      "failed": false
+    },
+    {
+      "t": 20736,
+      "return": 4.489468,
+      "failed": false
+    },
+    {
+      "t": 20756,
+      "return": 3.673963,
+      "failed": false
+    },
+    {
+      "t": 20756,
+      "return": 5.123524,
+      "failed": false
+    },
+    {
+      "t": 20756,
+      "return": 1.949857,
+      "failed": false
+    },
+    {
+      "t": 20832,
+      "return": 3.289223,
+      "failed": false
+    },
+    {
+      "t": 20852,
+      "return": 4.737172,
+      "failed": false
+    },
+    {
+      "t": 20852,
+      "return": 3.583961,
+      "failed": false
+    },
+    {
+      "t": 20852,
+      "return": 4.009238,
+      "failed": false
+    },
+    {
+      "t": 20928,
+      "return": 2.624499,
+      "failed": false
+    },
+    {
+      "t": 20948,
+      "return": 3.818798,
+      "failed": false
+    },
+    {
+      "t": 20948,
+      "return": -49.11527,
+      "failed": true,
+      "failure_reason": "RuFaS aborted the run and caught the error internally, so the simulation stopped early rather than completing its horizon. Recorded failures: ['TaskManager.task.Failed to finish task: 1/1 with output prefix: freestall', 'TaskManager._run_tasks.Task(s) failed']. Cause: ['NutrientRequestResults Error: ammonium_nitrogen_fraction must be between 0 and 1.']"
+    },
+    {
+      "t": 20948,
+      "return": 4.270567,
+      "failed": false
+    },
+    {
+      "t": 20948,
+      "return": 3.69713,
+      "failed": false
+    },
+    {
+      "t": 21044,
+      "return": 5.699239,
+      "failed": false
+    },
+    {
+      "t": 21044,
+      "return": 4.439453,
+      "failed": false
+    },
+    {
+      "t": 21044,
+      "return": 5.148046,
+      "failed": false
+    },
+    {
+      "t": 21044,
+      "return": 4.157592,
+      "failed": false
+    },
+    {
+      "t": 21140,
+      "return": 3.071348,
+      "failed": false
+    },
+    {
+      "t": 21140,
+      "return": 3.102643,
+      "failed": false
+    },
+    {
+      "t": 21140,
+      "return": 3.002212,
+      "failed": false
+    },
+    {
+      "t": 21140,
+      "return": 3.561765,
+      "failed": false
+    },
+    {
+      "t": 21236,
+      "return": 4.065111,
+      "failed": false
+    },
+    {
+      "t": 21236,
+      "return": 1.676014,
+      "failed": false
+    },
+    {
+      "t": 21236,
+      "return": 2.232481,
+      "failed": false
+    },
+    {
+      "t": 21236,
+      "return": 3.600929,
+      "failed": false
+    },
+    {
+      "t": 21332,
+      "return": 3.540758,
+      "failed": false
+    },
+    {
+      "t": 21332,
+      "return": 2.651926,
+      "failed": false
+    },
+    {
+      "t": 21332,
+      "return": 2.734523,
+      "failed": false
+    },
+    {
+      "t": 21332,
+      "return": 4.494193,
+      "failed": false
+    },
+    {
+      "t": 21428,
+      "return": 6.958778,
+      "failed": false
+    },
+    {
+      "t": 21428,
+      "return": 3.573267,
+      "failed": false
+    },
+    {
+      "t": 21428,
+      "return": 5.539992,
+      "failed": false
+    },
+    {
+      "t": 21428,
+      "return": 3.855571,
+      "failed": false
+    },
+    {
+      "t": 21524,
+      "return": 5.238606,
+      "failed": false
+    },
+    {
+      "t": 21524,
+      "return": 3.265194,
+      "failed": false
+    },
+    {
+      "t": 21524,
+      "return": 1.916418,
+      "failed": false
+    },
+    {
+      "t": 21524,
+      "return": 4.31104,
+      "failed": false
+    },
+    {
+      "t": 21620,
+      "return": 5.846449,
+      "failed": false
+    },
+    {
+      "t": 21620,
+      "return": 2.472423,
+      "failed": false
+    },
+    {
+      "t": 21620,
+      "return": 4.93134,
+      "failed": false
+    },
+    {
+      "t": 21620,
+      "return": 3.702302,
+      "failed": false
+    },
+    {
+      "t": 21716,
+      "return": 5.084637,
+      "failed": false
+    },
+    {
+      "t": 21716,
+      "return": 2.756179,
+      "failed": false
+    },
+    {
+      "t": 21716,
+      "return": 3.779774,
+      "failed": false
+    },
+    {
+      "t": 21716,
+      "return": 4.456871,
+      "failed": false
+    },
+    {
+      "t": 21812,
+      "return": 2.051983,
+      "failed": false
+    },
+    {
+      "t": 21812,
+      "return": 4.534336,
+      "failed": false
+    },
+    {
+      "t": 21812,
+      "return": 3.160675,
+      "failed": false
+    },
+    {
+      "t": 21812,
+      "return": 3.070944,
+      "failed": false
+    },
+    {
+      "t": 21908,
+      "return": 2.527028,
+      "failed": false
+    },
+    {
+      "t": 21908,
+      "return": 4.312616,
+      "failed": false
+    },
+    {
+      "t": 21908,
+      "return": 4.312628,
+      "failed": false
+    },
+    {
+      "t": 21908,
+      "return": 5.048572,
+      "failed": false
+    },
+    {
+      "t": 22004,
+      "return": 3.947781,
+      "failed": false
+    },
+    {
+      "t": 22004,
+      "return": 3.450302,
+      "failed": false
+    },
+    {
+      "t": 22004,
+      "return": 5.181392,
+      "failed": false
+    },
+    {
+      "t": 22004,
+      "return": 3.091683,
+      "failed": false
+    },
+    {
+      "t": 22100,
+      "return": 3.597345,
+      "failed": false
+    },
+    {
+      "t": 22100,
+      "return": 4.050739,
+      "failed": false
+    },
+    {
+      "t": 22100,
+      "return": 3.649651,
+      "failed": false
+    },
+    {
+      "t": 22100,
+      "return": 4.185316,
+      "failed": false
+    },
+    {
+      "t": 22196,
+      "return": 4.083538,
+      "failed": false
+    },
+    {
+      "t": 22196,
+      "return": 3.392859,
+      "failed": false
+    },
+    {
+      "t": 22196,
+      "return": 4.836871,
+      "failed": false
+    },
+    {
+      "t": 22196,
+      "return": 2.644187,
+      "failed": false
+    },
+    {
+      "t": 22292,
+      "return": 2.885631,
+      "failed": false
+    },
+    {
+      "t": 22292,
+      "return": 4.103252,
+      "failed": false
+    },
+    {
+      "t": 22292,
+      "return": 5.013438,
+      "failed": false
+    },
+    {
+      "t": 22292,
+      "return": 2.917431,
+      "failed": false
+    },
+    {
+      "t": 22388,
+      "return": 4.43587,
+      "failed": false
+    },
+    {
+      "t": 22388,
+      "return": 4.892286,
+      "failed": false
+    },
+    {
+      "t": 22388,
+      "return": 5.30864,
+      "failed": false
+    },
+    {
+      "t": 22388,
+      "return": 4.770959,
+      "failed": false
+    },
+    {
+      "t": 22484,
+      "return": 5.580188,
+      "failed": false
+    },
+    {
+      "t": 22484,
+      "return": 3.48756,
+      "failed": false
+    },
+    {
+      "t": 22484,
+      "return": 5.678383,
+      "failed": false
+    },
+    {
+      "t": 22484,
+      "return": 6.256386,
+      "failed": false
+    },
+    {
+      "t": 22580,
+      "return": 5.092922,
+      "failed": false
+    },
+    {
+      "t": 22580,
+      "return": 3.03585,
+      "failed": false
+    },
+    {
+      "t": 22580,
+      "return": 4.948694,
+      "failed": false
+    },
+    {
+      "t": 22580,
+      "return": 5.46453,
+      "failed": false
+    },
+    {
+      "t": 22676,
+      "return": 5.290384,
+      "failed": false
+    },
+    {
+      "t": 22676,
+      "return": 5.732536,
+      "failed": false
+    },
+    {
+      "t": 22676,
+      "return": 4.336768,
+      "failed": false
+    },
+    {
+      "t": 22676,
+      "return": 6.168691,
+      "failed": false
+    },
+    {
+      "t": 22772,
+      "return": 4.730225,
+      "failed": false
+    },
+    {
+      "t": 22772,
+      "return": 1.789781,
+      "failed": false
+    },
+    {
+      "t": 22772,
+      "return": 2.615117,
+      "failed": false
+    },
+    {
+      "t": 22772,
+      "return": 6.196584,
+      "failed": false
+    },
+    {
+      "t": 22868,
+      "return": 2.804177,
+      "failed": false
+    },
+    {
+      "t": 22868,
+      "return": 4.531016,
+      "failed": false
+    },
+    {
+      "t": 22868,
+      "return": 4.029242,
+      "failed": false
+    },
+    {
+      "t": 22868,
+      "return": 5.58126,
+      "failed": false
+    },
+    {
+      "t": 22964,
+      "return": 5.947334,
+      "failed": false
+    },
+    {
+      "t": 22964,
+      "return": 2.004432,
+      "failed": false
+    },
+    {
+      "t": 22964,
+      "return": 4.85809,
+      "failed": false
+    },
+    {
+      "t": 22964,
+      "return": 5.095262,
+      "failed": false
+    },
+    {
+      "t": 23060,
+      "return": 3.117627,
+      "failed": false
+    },
+    {
+      "t": 23060,
+      "return": 5.480607,
+      "failed": false
+    },
+    {
+      "t": 23060,
+      "return": 4.126094,
+      "failed": false
+    },
+    {
+      "t": 23060,
+      "return": 7.048081,
+      "failed": false
+    },
+    {
+      "t": 23156,
+      "return": 4.021725,
+      "failed": false
+    },
+    {
+      "t": 23156,
+      "return": 3.591505,
+      "failed": false
+    },
+    {
+      "t": 23156,
+      "return": 5.719362,
+      "failed": false
+    },
+    {
+      "t": 23156,
+      "return": 3.322336,
+      "failed": false
+    },
+    {
+      "t": 23252,
+      "return": 4.04038,
+      "failed": false
+    },
+    {
+      "t": 23252,
+      "return": 3.743509,
+      "failed": false
+    },
+    {
+      "t": 23252,
+      "return": 5.966747,
+      "failed": false
+    },
+    {
+      "t": 23252,
+      "return": 3.555113,
+      "failed": false
+    },
+    {
+      "t": 23348,
+      "return": 2.714731,
+      "failed": false
+    },
+    {
+      "t": 23348,
+      "return": 3.608212,
+      "failed": false
+    },
+    {
+      "t": 23348,
+      "return": 4.766664,
+      "failed": false
+    },
+    {
+      "t": 23348,
+      "return": 3.284466,
+      "failed": false
+    },
+    {
+      "t": 23444,
+      "return": 5.258194,
+      "failed": false
+    },
+    {
+      "t": 23444,
+      "return": 2.673192,
+      "failed": false
+    },
+    {
+      "t": 23444,
+      "return": 2.886613,
+      "failed": false
+    },
+    {
+      "t": 23444,
+      "return": 4.397093,
+      "failed": false
+    },
+    {
+      "t": 23540,
+      "return": 6.300743,
+      "failed": false
+    },
+    {
+      "t": 23540,
+      "return": 6.73494,
+      "failed": false
+    },
+    {
+      "t": 23540,
+      "return": 5.356141,
+      "failed": false
+    },
+    {
+      "t": 23540,
+      "return": 3.239564,
+      "failed": false
+    },
+    {
+      "t": 23636,
+      "return": 3.455968,
+      "failed": false
+    },
+    {
+      "t": 23636,
+      "return": 2.84432,
+      "failed": false
+    },
+    {
+      "t": 23636,
+      "return": 3.904913,
+      "failed": false
+    },
+    {
+      "t": 23636,
+      "return": 2.978149,
+      "failed": false
+    },
+    {
+      "t": 23732,
+      "return": 3.073269,
+      "failed": false
+    },
+    {
+      "t": 23732,
+      "return": 5.673013,
+      "failed": false
+    },
+    {
+      "t": 23732,
+      "return": 4.250897,
+      "failed": false
+    },
+    {
+      "t": 23732,
+      "return": 1.392395,
+      "failed": false
+    },
+    {
+      "t": 23828,
+      "return": 4.470489,
+      "failed": false
+    },
+    {
+      "t": 23828,
+      "return": 2.409864,
+      "failed": false
+    },
+    {
+      "t": 23828,
+      "return": 4.051012,
+      "failed": false
+    },
+    {
+      "t": 23828,
+      "return": 3.76162,
+      "failed": false
+    },
+    {
+      "t": 23924,
+      "return": 5.964575,
+      "failed": false
+    },
+    {
+      "t": 23924,
+      "return": 3.388363,
+      "failed": false
+    },
+    {
+      "t": 23924,
+      "return": 1.798745,
+      "failed": false
+    },
+    {
+      "t": 23924,
+      "return": 3.446634,
+      "failed": false
+    },
+    {
+      "t": 24020,
+      "return": 5.883465,
+      "failed": false
+    },
+    {
+      "t": 24020,
+      "return": 4.02805,
+      "failed": false
+    },
+    {
+      "t": 24020,
+      "return": 3.949589,
+      "failed": false
+    },
+    {
+      "t": 24020,
+      "return": 3.1744,
+      "failed": false
+    },
+    {
+      "t": 24116,
+      "return": 2.823652,
+      "failed": false
+    },
+    {
+      "t": 24116,
+      "return": 6.55265,
+      "failed": false
+    },
+    {
+      "t": 24116,
+      "return": 5.802108,
+      "failed": false
+    },
+    {
+      "t": 24116,
+      "return": 3.659979,
+      "failed": false
+    },
+    {
+      "t": 24212,
+      "return": 4.238893,
+      "failed": false
+    },
+    {
+      "t": 24212,
+      "return": 1.640698,
+      "failed": false
+    },
+    {
+      "t": 24212,
+      "return": 5.213397,
+      "failed": false
+    },
+    {
+      "t": 24212,
+      "return": 3.917119,
+      "failed": false
+    },
+    {
+      "t": 24308,
+      "return": 4.449249,
+      "failed": false
+    },
+    {
+      "t": 24308,
+      "return": 4.275283,
+      "failed": false
+    },
+    {
+      "t": 24308,
+      "return": 2.804811,
+      "failed": false
+    },
+    {
+      "t": 24308,
+      "return": 2.697436,
+      "failed": false
+    },
+    {
+      "t": 24404,
+      "return": 3.948627,
+      "failed": false
+    },
+    {
+      "t": 24404,
+      "return": 2.895268,
+      "failed": false
+    },
+    {
+      "t": 24404,
+      "return": 4.342142,
+      "failed": false
+    },
+    {
+      "t": 24404,
+      "return": 2.066059,
+      "failed": false
+    },
+    {
+      "t": 24500,
+      "return": 5.765499,
+      "failed": false
+    },
+    {
+      "t": 24500,
+      "return": 4.219647,
+      "failed": false
+    },
+    {
+      "t": 24500,
+      "return": 3.823517,
+      "failed": false
+    },
+    {
+      "t": 24500,
+      "return": 2.894747,
+      "failed": false
+    },
+    {
+      "t": 24596,
+      "return": 5.858474,
+      "failed": false
+    },
+    {
+      "t": 24596,
+      "return": 5.526733,
+      "failed": false
+    },
+    {
+      "t": 24596,
+      "return": 1.621451,
+      "failed": false
+    },
+    {
+      "t": 24596,
+      "return": 4.966374,
+      "failed": false
+    },
+    {
+      "t": 24692,
+      "return": 4.109265,
+      "failed": false
+    },
+    {
+      "t": 24692,
+      "return": 3.80502,
+      "failed": false
+    },
+    {
+      "t": 24692,
+      "return": 5.746878,
+      "failed": false
+    },
+    {
+      "t": 24692,
+      "return": 3.757061,
+      "failed": false
+    },
+    {
+      "t": 24788,
+      "return": 3.273924,
+      "failed": false
+    },
+    {
+      "t": 24788,
+      "return": 4.550392,
+      "failed": false
+    },
+    {
+      "t": 24788,
+      "return": 1.381994,
+      "failed": false
+    },
+    {
+      "t": 24788,
+      "return": 3.237904,
+      "failed": false
+    },
+    {
+      "t": 24884,
+      "return": 2.838342,
+      "failed": false
+    },
+    {
+      "t": 24884,
+      "return": 3.524565,
+      "failed": false
+    },
+    {
+      "t": 24884,
+      "return": 5.431837,
+      "failed": false
+    },
+    {
+      "t": 24884,
+      "return": 2.661301,
+      "failed": false
+    },
+    {
+      "t": 24980,
+      "return": 3.253663,
+      "failed": false
+    },
+    {
+      "t": 24980,
+      "return": 4.343229,
+      "failed": false
+    },
+    {
+      "t": 24980,
+      "return": 2.748297,
+      "failed": false
+    },
+    {
+      "t": 24980,
+      "return": 5.462651,
+      "failed": false
+    },
+    {
+      "t": 25076,
+      "return": 3.278298,
+      "failed": false
+    },
+    {
+      "t": 25076,
+      "return": 3.690477,
+      "failed": false
+    },
+    {
+      "t": 25076,
+      "return": 3.597652,
+      "failed": false
+    },
+    {
+      "t": 25076,
+      "return": 1.745459,
+      "failed": false
+    },
+    {
+      "t": 25172,
+      "return": 5.393668,
+      "failed": false
+    },
+    {
+      "t": 25172,
+      "return": 3.805836,
+      "failed": false
+    },
+    {
+      "t": 25172,
+      "return": 3.976374,
+      "failed": false
+    },
+    {
+      "t": 25172,
+      "return": 4.185576,
+      "failed": false
+    },
+    {
+      "t": 25268,
+      "return": 5.924558,
+      "failed": false
+    },
+    {
+      "t": 25268,
+      "return": 4.34195,
+      "failed": false
+    },
+    {
+      "t": 25268,
+      "return": 3.973071,
+      "failed": false
+    },
+    {
+      "t": 25268,
+      "return": 4.626642,
+      "failed": false
+    },
+    {
+      "t": 25364,
+      "return": 2.90811,
+      "failed": false
+    },
+    {
+      "t": 25364,
+      "return": 3.557731,
+      "failed": false
+    },
+    {
+      "t": 25364,
+      "return": 4.737696,
+      "failed": false
+    },
+    {
+      "t": 25364,
+      "return": 3.924221,
+      "failed": false
+    },
+    {
+      "t": 25460,
+      "return": 6.463955,
+      "failed": false
+    },
+    {
+      "t": 25460,
+      "return": 1.991266,
+      "failed": false
+    },
+    {
+      "t": 25460,
+      "return": 2.411112,
+      "failed": false
+    },
+    {
+      "t": 25460,
+      "return": 5.70638,
+      "failed": false
+    },
+    {
+      "t": 25556,
+      "return": 5.175766,
+      "failed": false
+    },
+    {
+      "t": 25556,
+      "return": 4.289842,
+      "failed": false
+    },
+    {
+      "t": 25556,
+      "return": 4.796144,
+      "failed": false
+    },
+    {
+      "t": 25556,
+      "return": 3.59704,
+      "failed": false
+    },
+    {
+      "t": 25652,
+      "return": 4.5182,
+      "failed": false
+    },
+    {
+      "t": 25652,
+      "return": 6.435985,
+      "failed": false
+    },
+    {
+      "t": 25652,
+      "return": 5.440557,
+      "failed": false
+    },
+    {
+      "t": 25652,
+      "return": 8.383279,
+      "failed": false
+    },
+    {
+      "t": 25748,
+      "return": 4.668635,
+      "failed": false
+    },
+    {
+      "t": 25748,
+      "return": 3.449091,
+      "failed": false
+    },
+    {
+      "t": 25748,
+      "return": 3.498874,
+      "failed": false
+    },
+    {
+      "t": 25748,
+      "return": 2.569368,
+      "failed": false
+    },
+    {
+      "t": 25844,
+      "return": 5.672908,
+      "failed": false
+    },
+    {
+      "t": 25844,
+      "return": 5.250203,
+      "failed": false
+    },
+    {
+      "t": 25844,
+      "return": 2.722437,
+      "failed": false
+    },
+    {
+      "t": 25844,
+      "return": 4.71228,
+      "failed": false
+    },
+    {
+      "t": 25940,
+      "return": 5.447829,
+      "failed": false
+    },
+    {
+      "t": 25940,
+      "return": 5.664508,
+      "failed": false
+    },
+    {
+      "t": 25940,
+      "return": 5.301484,
+      "failed": false
+    },
+    {
+      "t": 25940,
+      "return": 4.315155,
+      "failed": false
+    },
+    {
+      "t": 26036,
+      "return": 4.947929,
+      "failed": false
+    },
+    {
+      "t": 26036,
+      "return": 4.897396,
+      "failed": false
+    },
+    {
+      "t": 26036,
+      "return": 4.804866,
+      "failed": false
+    },
+    {
+      "t": 26036,
+      "return": 5.533755,
+      "failed": false
+    },
+    {
+      "t": 26132,
+      "return": 4.777824,
+      "failed": false
+    },
+    {
+      "t": 26132,
+      "return": 3.65506,
+      "failed": false
+    },
+    {
+      "t": 26132,
+      "return": 5.419025,
+      "failed": false
+    },
+    {
+      "t": 26132,
+      "return": 4.405505,
+      "failed": false
+    },
+    {
+      "t": 26228,
+      "return": 4.57316,
+      "failed": false
+    },
+    {
+      "t": 26228,
+      "return": 6.05483,
+      "failed": false
+    },
+    {
+      "t": 26228,
+      "return": 5.999639,
+      "failed": false
+    },
+    {
+      "t": 26228,
+      "return": 4.718628,
+      "failed": false
+    },
+    {
+      "t": 26324,
+      "return": 4.135578,
+      "failed": false
+    },
+    {
+      "t": 26324,
+      "return": 2.74349,
+      "failed": false
+    },
+    {
+      "t": 26324,
+      "return": 4.033228,
+      "failed": false
+    },
+    {
+      "t": 26324,
+      "return": 5.519584,
+      "failed": false
+    },
+    {
+      "t": 26420,
+      "return": 2.746507,
+      "failed": false
+    },
+    {
+      "t": 26420,
+      "return": 3.341534,
+      "failed": false
+    },
+    {
+      "t": 26420,
+      "return": 4.23181,
+      "failed": false
+    },
+    {
+      "t": 26420,
+      "return": 5.03069,
+      "failed": false
+    },
+    {
+      "t": 26516,
+      "return": 4.331633,
+      "failed": false
+    },
+    {
+      "t": 26516,
+      "return": 4.167277,
+      "failed": false
+    },
+    {
+      "t": 26516,
+      "return": 4.810038,
+      "failed": false
+    },
+    {
+      "t": 26516,
+      "return": 3.599032,
+      "failed": false
+    },
+    {
+      "t": 26612,
+      "return": 3.144475,
+      "failed": false
+    },
+    {
+      "t": 26612,
+      "return": 3.033,
+      "failed": false
+    },
+    {
+      "t": 26612,
+      "return": 3.577699,
+      "failed": false
+    },
+    {
+      "t": 26612,
+      "return": 3.735081,
+      "failed": false
+    },
+    {
+      "t": 26708,
+      "return": 5.351582,
+      "failed": false
+    },
+    {
+      "t": 26708,
+      "return": 3.206723,
+      "failed": false
+    },
+    {
+      "t": 26708,
+      "return": 5.656436,
+      "failed": false
+    },
+    {
+      "t": 26708,
+      "return": 5.373329,
+      "failed": false
+    },
+    {
+      "t": 26804,
+      "return": 4.367347,
+      "failed": false
+    },
+    {
+      "t": 26804,
+      "return": 2.723242,
+      "failed": false
+    },
+    {
+      "t": 26804,
+      "return": 5.216588,
+      "failed": false
+    },
+    {
+      "t": 26804,
+      "return": 4.926429,
+      "failed": false
+    },
+    {
+      "t": 26900,
+      "return": 5.582076,
+      "failed": false
+    },
+    {
+      "t": 26900,
+      "return": 4.895684,
+      "failed": false
+    },
+    {
+      "t": 26900,
+      "return": 4.355197,
+      "failed": false
+    },
+    {
+      "t": 26900,
+      "return": 6.166569,
+      "failed": false
+    },
+    {
+      "t": 26996,
+      "return": 4.665957,
+      "failed": false
+    },
+    {
+      "t": 26996,
+      "return": 3.185778,
+      "failed": false
+    },
+    {
+      "t": 26996,
+      "return": 4.448996,
+      "failed": false
+    },
+    {
+      "t": 26996,
+      "return": 4.195505,
+      "failed": false
+    },
+    {
+      "t": 27092,
+      "return": 4.174523,
+      "failed": false
+    },
+    {
+      "t": 27092,
+      "return": 4.278485,
+      "failed": false
+    },
+    {
+      "t": 27092,
+      "return": 5.376293,
+      "failed": false
+    },
+    {
+      "t": 27092,
+      "return": 4.749902,
+      "failed": false
+    },
+    {
+      "t": 27188,
+      "return": 3.129256,
+      "failed": false
+    },
+    {
+      "t": 27188,
+      "return": 3.16334,
+      "failed": false
+    },
+    {
+      "t": 27188,
+      "return": 4.688427,
+      "failed": false
+    },
+    {
+      "t": 27188,
+      "return": 0.9091,
+      "failed": false
+    },
+    {
+      "t": 27208,
+      "return": -49.939403,
+      "failed": true,
+      "failure_reason": "RuFaS aborted the run and caught the error internally, so the simulation stopped early rather than completing its horizon. Recorded failures: ['TaskManager.task.Failed to finish task: 1/1 with output prefix: freestall', 'TaskManager._run_tasks.Task(s) failed']. Cause: ['NutrientRequestResults Error: ammonium_nitrogen_fraction must be between 0 and 1.']"
+    },
+    {
+      "t": 27284,
+      "return": 2.895797,
+      "failed": false
+    },
+    {
+      "t": 27284,
+      "return": 2.245021,
+      "failed": false
+    },
+    {
+      "t": 27284,
+      "return": 4.169149,
+      "failed": false
+    },
+    {
+      "t": 27304,
+      "return": 5.877965,
+      "failed": false
+    },
+    {
+      "t": 27380,
+      "return": 3.627434,
+      "failed": false
+    },
+    {
+      "t": 27380,
+      "return": 1.814957,
+      "failed": false
+    },
+    {
+      "t": 27380,
+      "return": 5.155535,
+      "failed": false
+    },
+    {
+      "t": 27400,
+      "return": 5.103119,
+      "failed": false
+    },
+    {
+      "t": 27476,
+      "return": 8.757701,
+      "failed": false
+    },
+    {
+      "t": 27476,
+      "return": 4.96967,
+      "failed": false
+    },
+    {
+      "t": 27476,
+      "return": 3.138953,
+      "failed": false
+    },
+    {
+      "t": 27496,
+      "return": 3.945601,
+      "failed": false
+    },
+    {
+      "t": 27572,
+      "return": 3.857105,
+      "failed": false
+    },
+    {
+      "t": 27572,
+      "return": 4.246041,
+      "failed": false
+    },
+    {
+      "t": 27572,
+      "return": 8.63763,
+      "failed": false
+    },
+    {
+      "t": 27592,
+      "return": 4.603223,
+      "failed": false
+    },
+    {
+      "t": 27668,
+      "return": 4.066676,
+      "failed": false
+    },
+    {
+      "t": 27668,
+      "return": 3.891196,
+      "failed": false
+    },
+    {
+      "t": 27668,
+      "return": 4.401841,
+      "failed": false
+    },
+    {
+      "t": 27688,
+      "return": 6.174506,
+      "failed": false
+    },
+    {
+      "t": 27764,
+      "return": 5.034272,
+      "failed": false
+    },
+    {
+      "t": 27764,
+      "return": 5.392857,
+      "failed": false
+    },
+    {
+      "t": 27764,
+      "return": 3.90045,
+      "failed": false
+    },
+    {
+      "t": 27784,
+      "return": 3.257597,
+      "failed": false
+    },
+    {
+      "t": 27860,
+      "return": 4.303933,
+      "failed": false
+    },
+    {
+      "t": 27860,
+      "return": 2.54316,
+      "failed": false
+    },
+    {
+      "t": 27860,
+      "return": 3.889184,
+      "failed": false
+    },
+    {
+      "t": 27880,
+      "return": 6.320174,
+      "failed": false
+    },
+    {
+      "t": 27956,
+      "return": 1.935025,
+      "failed": false
+    },
+    {
+      "t": 27956,
+      "return": 2.115474,
+      "failed": false
+    },
+    {
+      "t": 27956,
+      "return": 5.459211,
+      "failed": false
+    },
+    {
+      "t": 27976,
+      "return": 3.975894,
+      "failed": false
+    },
+    {
+      "t": 28052,
+      "return": 3.889807,
+      "failed": false
+    },
+    {
+      "t": 28052,
+      "return": 3.405561,
+      "failed": false
+    },
+    {
+      "t": 28052,
+      "return": 2.529785,
+      "failed": false
+    },
+    {
+      "t": 28072,
+      "return": 4.380474,
+      "failed": false
+    },
+    {
+      "t": 28148,
+      "return": 3.916036,
+      "failed": false
+    },
+    {
+      "t": 28148,
+      "return": 3.71359,
+      "failed": false
+    },
+    {
+      "t": 28148,
+      "return": 3.027088,
+      "failed": false
+    },
+    {
+      "t": 28168,
+      "return": 4.089766,
+      "failed": false
+    },
+    {
+      "t": 28244,
+      "return": 3.261431,
+      "failed": false
+    },
+    {
+      "t": 28244,
+      "return": 5.087602,
+      "failed": false
+    },
+    {
+      "t": 28244,
+      "return": 5.41176,
+      "failed": false
+    },
+    {
+      "t": 28264,
+      "return": 4.226971,
+      "failed": false
+    },
+    {
+      "t": 28340,
+      "return": 5.034997,
+      "failed": false
+    },
+    {
+      "t": 28340,
+      "return": 5.114715,
+      "failed": false
+    },
+    {
+      "t": 28340,
+      "return": 6.490847,
+      "failed": false
+    },
+    {
+      "t": 28360,
+      "return": 5.078474,
+      "failed": false
+    },
+    {
+      "t": 28436,
+      "return": 5.494676,
+      "failed": false
+    },
+    {
+      "t": 28436,
+      "return": 6.133896,
+      "failed": false
+    },
+    {
+      "t": 28436,
+      "return": 4.437024,
+      "failed": false
+    },
+    {
+      "t": 28456,
+      "return": 4.874652,
+      "failed": false
+    },
+    {
+      "t": 28532,
+      "return": 5.383605,
+      "failed": false
+    },
+    {
+      "t": 28532,
+      "return": 6.480843,
+      "failed": false
+    },
+    {
+      "t": 28532,
+      "return": 8.171411,
+      "failed": false
+    },
+    {
+      "t": 28552,
+      "return": 5.621597,
+      "failed": false
+    },
+    {
+      "t": 28628,
+      "return": 4.468098,
+      "failed": false
+    },
+    {
+      "t": 28628,
+      "return": 4.805663,
+      "failed": false
+    },
+    {
+      "t": 28628,
+      "return": 5.012662,
+      "failed": false
+    },
+    {
+      "t": 28648,
+      "return": 2.874099,
+      "failed": false
+    },
+    {
+      "t": 28724,
+      "return": 3.100287,
+      "failed": false
+    },
+    {
+      "t": 28724,
+      "return": 4.995345,
+      "failed": false
+    },
+    {
+      "t": 28724,
+      "return": 5.771877,
+      "failed": false
+    },
+    {
+      "t": 28744,
+      "return": 4.878217,
+      "failed": false
+    },
+    {
+      "t": 28820,
+      "return": 3.978774,
+      "failed": false
+    },
+    {
+      "t": 28820,
+      "return": 7.091384,
+      "failed": false
+    },
+    {
+      "t": 28820,
+      "return": 4.622678,
+      "failed": false
+    },
+    {
+      "t": 28840,
+      "return": 5.396587,
+      "failed": false
+    },
+    {
+      "t": 28916,
+      "return": 5.725791,
+      "failed": false
+    },
+    {
+      "t": 28916,
+      "return": 3.280576,
+      "failed": false
+    },
+    {
+      "t": 28916,
+      "return": 4.548124,
+      "failed": false
+    },
+    {
+      "t": 28936,
+      "return": 4.540396,
+      "failed": false
+    },
+    {
+      "t": 29012,
+      "return": 6.706601,
+      "failed": false
+    },
+    {
+      "t": 29012,
+      "return": 4.948521,
+      "failed": false
+    },
+    {
+      "t": 29012,
+      "return": 5.494221,
+      "failed": false
+    },
+    {
+      "t": 29032,
+      "return": 6.257912,
+      "failed": false
+    },
+    {
+      "t": 29108,
+      "return": 3.793447,
+      "failed": false
+    },
+    {
+      "t": 29108,
+      "return": 4.211408,
+      "failed": false
+    },
+    {
+      "t": 29108,
+      "return": 2.87121,
+      "failed": false
+    },
+    {
+      "t": 29128,
+      "return": 4.59743,
+      "failed": false
+    },
+    {
+      "t": 29204,
+      "return": 4.282211,
+      "failed": false
+    },
+    {
+      "t": 29204,
+      "return": 2.878646,
+      "failed": false
+    },
+    {
+      "t": 29204,
+      "return": 6.397242,
+      "failed": false
+    },
+    {
+      "t": 29224,
+      "return": 4.159776,
+      "failed": false
+    },
+    {
+      "t": 29300,
+      "return": 4.289481,
+      "failed": false
+    },
+    {
+      "t": 29300,
+      "return": 3.02295,
+      "failed": false
+    },
+    {
+      "t": 29300,
+      "return": 5.33183,
+      "failed": false
+    },
+    {
+      "t": 29320,
+      "return": 5.538441,
+      "failed": false
+    },
+    {
+      "t": 29396,
+      "return": 4.440474,
+      "failed": false
+    },
+    {
+      "t": 29396,
+      "return": 5.539679,
+      "failed": false
+    },
+    {
+      "t": 29396,
+      "return": 5.109337,
+      "failed": false
+    },
+    {
+      "t": 29416,
+      "return": 4.271574,
+      "failed": false
+    },
+    {
+      "t": 29492,
+      "return": 4.828268,
+      "failed": false
+    },
+    {
+      "t": 29492,
+      "return": 5.035891,
+      "failed": false
+    },
+    {
+      "t": 29492,
+      "return": 4.264268,
+      "failed": false
+    },
+    {
+      "t": 29512,
+      "return": 5.537997,
+      "failed": false
+    },
+    {
+      "t": 29588,
+      "return": 3.561503,
+      "failed": false
+    },
+    {
+      "t": 29588,
+      "return": 1.051421,
+      "failed": false
+    },
+    {
+      "t": 29588,
+      "return": 5.610914,
+      "failed": false
+    },
+    {
+      "t": 29608,
+      "return": 6.08546,
+      "failed": false
+    },
+    {
+      "t": 29684,
+      "return": 7.703179,
+      "failed": false
+    },
+    {
+      "t": 29684,
+      "return": 2.355432,
+      "failed": false
+    },
+    {
+      "t": 29684,
+      "return": 4.912663,
+      "failed": false
+    },
+    {
+      "t": 29704,
+      "return": 5.495509,
+      "failed": false
+    },
+    {
+      "t": 29780,
+      "return": 4.765881,
+      "failed": false
+    },
+    {
+      "t": 29780,
+      "return": 4.705038,
+      "failed": false
+    },
+    {
+      "t": 29780,
+      "return": 2.474465,
+      "failed": false
+    },
+    {
+      "t": 29800,
+      "return": 3.584415,
+      "failed": false
+    },
+    {
+      "t": 29876,
+      "return": 4.250396,
+      "failed": false
+    },
+    {
+      "t": 29876,
+      "return": 6.16463,
+      "failed": false
+    },
+    {
+      "t": 29876,
+      "return": 5.881235,
+      "failed": false
+    },
+    {
+      "t": 29896,
+      "return": 5.009655,
+      "failed": false
+    },
+    {
+      "t": 29972,
+      "return": 4.516601,
+      "failed": false
+    },
+    {
+      "t": 29972,
+      "return": 3.056902,
+      "failed": false
+    },
+    {
+      "t": 29972,
+      "return": 7.517124,
+      "failed": false
+    },
+    {
+      "t": 29992,
+      "return": 4.204577,
+      "failed": false
+    },
+    {
+      "t": 30068,
+      "return": 5.079496,
+      "failed": false
+    },
+    {
+      "t": 30068,
+      "return": 6.784058,
+      "failed": false
+    },
+    {
+      "t": 30068,
+      "return": 4.854114,
+      "failed": false
+    },
+    {
+      "t": 30088,
+      "return": 5.865747,
+      "failed": false
+    },
+    {
+      "t": 30164,
+      "return": 4.963701,
+      "failed": false
+    },
+    {
+      "t": 30164,
+      "return": 3.234655,
+      "failed": false
+    },
+    {
+      "t": 30164,
+      "return": 3.809248,
+      "failed": false
+    },
+    {
+      "t": 30184,
+      "return": 4.366541,
+      "failed": false
+    },
+    {
+      "t": 30260,
+      "return": 3.815269,
+      "failed": false
+    },
+    {
+      "t": 30260,
+      "return": 4.246724,
+      "failed": false
+    },
+    {
+      "t": 30260,
+      "return": 4.871798,
+      "failed": false
+    },
+    {
+      "t": 30280,
+      "return": 2.75428,
+      "failed": false
+    }
+  ]
+}
